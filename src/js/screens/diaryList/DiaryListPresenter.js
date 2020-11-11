@@ -56,7 +56,7 @@ const DiaryListPresenter = (diaryy) => {
             title: '집가고싶다',
             content: '고양이가 최고양',
             wordCloud: 'image/wordCloud2.png',
-            cover: 'image/book1.png',
+            cover: 'image/book2.png',
         },
         {
             title: '오늘의 일기',
@@ -68,7 +68,7 @@ const DiaryListPresenter = (diaryy) => {
             title: '집가고싶다',
             content: '고양이가 최고양',
             wordCloud: 'image/wordCloud2.png',
-            cover: 'image/book1.png',
+            cover: 'image/book2.png',
         },
     ]
 
@@ -95,7 +95,7 @@ const DiaryListPresenter = (diaryy) => {
                         <>
                             <div>
                                 <div className={`word_cloud ${index}`} name="word_cloud">
-                                    <img src={info.wordCloud} width="400px" height="200px"></img>
+                                    <img src={info.wordCloud} width="300px" height="200px"></img>
                                 </div>
                             </div>
                             <div>
@@ -105,7 +105,7 @@ const DiaryListPresenter = (diaryy) => {
                                     onClick={(e) => {
                                         changeDiary(e)
                                     }}>
-                                    <img src={info.cover} width="300px" height="300px"></img>
+                                    <img src={info.cover} width="150px" height="200px"></img>
                                 </div>
                             </div>
                         </>
