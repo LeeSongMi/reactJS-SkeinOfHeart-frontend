@@ -1,4 +1,24 @@
 #diaryList {
-  height: 100vh;
+  height: 50vh;
   justify-content: center;
+}
+
+.book_cover{
+  height:200px;
+  width: 500px;
+  padding: 50px 50px;
+}
+.slick-track{
+  width:80% !important;
+  display: inline-flex;
+  
+}
+.slick-list{
+  height: auto;
+  margin: 3%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+.word_cloud{
+  visibility: hidden;
 }
