@@ -12,7 +12,9 @@ const DiaryWriteContainer = () => {
     console.log(e.content)
     setPage(e.content)
     // axios({
-    //   method: 'get',
+    //   method: 'post',
+    // url: `${process.env.REACT_APP_API_HOST}/api/addDiary`,
+
     //   data:{
     //     content:content.value
     //   },

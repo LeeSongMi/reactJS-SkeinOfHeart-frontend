@@ -4,47 +4,8 @@ import SliderSlick from 'react-slick'
 import ReactDOM from 'react-dom'
 import { getElementError } from '@testing-library/react'
 
-const DiaryListPresenter = ({diary, changeDiary}) => {
+const DiaryListPresenter = ({diary, changeDiary, diaryListSlickSetting}) => {
 
-    // Slick Setting
-    const diaryListSlickSetting = {
-        dots: false,
-        focusOnSelect: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 3,
-        slidesToScroll: 4,
-        initialSlide: 0,
-        autoplay: true,
-        centerMode: true,
-        responsive: [
-            {
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 3,
-                    infinite: true,
-                    dots: true,
-                },
-            },
-            {
-                breakpoint: 600,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2,
-                    initialSlide: 2,
-                },
-            },
-            {
-                breakpoint: 480,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                },
-            },
-        ],
-    }
- 
 
     return (
         <>
@@ -73,6 +34,7 @@ const DiaryListPresenter = ({diary, changeDiary}) => {
                         </>
                     ))}
                 </SliderSlick>
+                <button>일기장 펼치기</button>
             </div>
         </>
     )
