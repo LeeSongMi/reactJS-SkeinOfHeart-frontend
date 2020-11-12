@@ -3,38 +3,44 @@ import '../../../css/diaryList.css'
 import SliderSlick from 'react-slick'
 import ReactDOM from 'react-dom'
 import { getElementError } from '@testing-library/react'
+import { indexOf } from 'lodash'
 
-const DiaryListPresenter = ({diary, changeDiary, diaryListSlickSetting}) => {
-
-
+const DiaryListPresenter = ({ diary, clickDiary,changeDiary, diaryListSlickSetting,cloud,setCloud }) => {
+    // console.log(diary[clickDiary].wordCloud)
     return (
         <>
             <div id="diaryList">
                 <h1>다이어리 리스트</h1>
                 {/* <img src={diary.diary[0].wordCloud} /> */}
-
+                <div className={`wordCloud ${cloud}`} >
+                    <img className="word_cloud" hidden={!cloud} src={diary[clickDiary===-1?0:clickDiary].wordCloud} />
+                </div>
                 <SliderSlick {...diaryListSlickSetting}>
                     {diary.map((info, index) => (
                         <>
-                            <div>
+                            {/* <div>
                                 <div className={`word_cloud ${index}`} name="word_cloud">
-                                    <img src={info.wordCloud} width="300px" height="200px"></img>
+                                    <img src={info.wordCloud} width="250px" height="200px"></img>
                                 </div>
-                            </div>
-                            <div>
+                            </div> */}
+                            <div className="book">
                                 <div
                                     className="book_cover"
                                     id={index}
                                     onClick={(e) => {
                                         changeDiary(e)
                                     }}>
-                                    <img src={info.cover} width="150px" height="200px"></img>
+                                    <img src={info.cover} width="150px" height="200px"></img><br/>
+                                    <font className="bookTitle">{info.title}</font><br/><br/>
+                                    <font className="bookContent">{info.content}</font>
                                 </div>
                             </div>
                         </>
                     ))}
                 </SliderSlick>
-                <button>일기장 펼치기</button>
+                <div className="btnDiv">
+                <button className="viewBtn">일기장 펼치기</button>
+                </div>
             </div>
         </>
     )
