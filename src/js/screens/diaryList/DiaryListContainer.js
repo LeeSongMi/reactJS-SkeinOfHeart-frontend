@@ -95,7 +95,7 @@ const DiaryListContainer = () => {
         slidesToShow: 3,
         slidesToScroll: 1,
         initialSlide: 0,
-        // autoplay: true,
+        autoplay: true,
         centerMode: true,
         arrows: false,
         responsive: [
