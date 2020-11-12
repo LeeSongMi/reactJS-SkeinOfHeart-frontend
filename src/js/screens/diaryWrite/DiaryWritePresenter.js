@@ -3,25 +3,8 @@ import "../../../css/diaryWrite.css";
 import { useForm } from "react-hook-form";
 import ReactDOM from 'react-dom'
 
-const DiaryWritePresenter = (page, setPage) => {
-  const { register, handleSubmit, watch, errors, reset } = useForm()
-  const addDiary =(e) =>{
-    console.log(e.content)
-    // axios({
-    //   method: 'get',
-    //   data:{
-    //     content:content.value
-    //   },
-    //   headers: {
-    //     Authorization: `bearer ${localStorage.getItem('token')}`,
-    // },
-    // }).then((response)=>{
-    //   const data = response.data
-    // reset()
-    // })
-    setPage(e.content)
-    reset()
-  }
+const DiaryWritePresenter = ({register, reset, handleSubmit,page, setPage,addDiary}) => {
+
   console.log(page)
   return (
     <>
