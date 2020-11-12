@@ -9,7 +9,7 @@ const MainPresenter = () => {
         <div className="title">
           <font className="logo">마음 실타래</font>
           <br />
-          <button type="button" class="btn btn-warning">
+          <button type="button" className="btn btn-warning">
             글쓰러가기
           </button>
         </div>

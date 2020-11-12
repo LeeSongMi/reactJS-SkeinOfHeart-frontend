@@ -1,20 +1,32 @@
 import React from "react";
 import "../../../css/diaryWrite.css";
 import { useForm } from "react-hook-form";
+import ReactDOM from 'react-dom'
 
 const DiaryWritePresenter = () => {
-  const { register, handleSubmit, watch, errors, reset } = useForm();
-
-  const writeDiary = (contents) => {
-    console.log(contents.content);
-    reset();
-  };
+  const { register, handleSubmit, watch, errors, reset } = useForm()
+  const addDiary =(e) =>{
+    console.log(e.content)
+    // axios({
+    //   method: 'get',
+    //   data:{
+    //     content:content.value
+    //   },
+    //   headers: {
+    //     Authorization: `bearer ${localStorage.getItem('token')}`,
+    // },
+    // }).then((response)=>{
+    //   const data = response.data
+    // })
+    reset()
+  }
+  
   return (
     <>
       <div id="diaryWrite">
         <h1>다이어리 작성</h1>
         <div className="writeArea">
-          <form className="writeForm" onSubmit={handleSubmit(writeDiary)}>
+          <form className="writeForm" onSubmit={handleSubmit(addDiary)}>
             <textarea
               className="writeDiary"
               type="textarea"
