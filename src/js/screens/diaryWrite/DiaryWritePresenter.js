@@ -3,7 +3,7 @@ import "../../../css/diaryWrite.css";
 import { useForm } from "react-hook-form";
 import ReactDOM from 'react-dom'
 
-const DiaryWritePresenter = () => {
+const DiaryWritePresenter = (page, setPage) => {
   const { register, handleSubmit, watch, errors, reset } = useForm()
   const addDiary =(e) =>{
     console.log(e.content)
@@ -17,10 +17,12 @@ const DiaryWritePresenter = () => {
     // },
     // }).then((response)=>{
     //   const data = response.data
+    // reset()
     // })
+    setPage(e.content)
     reset()
   }
-  
+  console.log(page)
   return (
     <>
       <div id="diaryWrite">
@@ -43,4 +45,4 @@ const DiaryWritePresenter = () => {
   );
 };
 
-export default DiaryWritePresenter;
+export default (DiaryWritePresenter);

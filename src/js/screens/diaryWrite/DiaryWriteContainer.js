@@ -1,4 +1,4 @@
-import React,{useeState, useState} from "react";
+import React,{useState} from "react";
 import DiaryWritePresenter from "./DiaryWritePresenter";
 import axios from 'axios'
 import { useForm } from "react-hook-form";
@@ -7,7 +7,7 @@ import { useForm } from "react-hook-form";
 const DiaryWriteContainer = () => {
   // const { register, handleSubmit, watch, errors, reset } = useForm()
 
-  // const [page, setPage]= useState('')
+  const [page, setPage]= useState('')
   
   return (
     <DiaryWritePresenter
@@ -15,11 +15,11 @@ const DiaryWriteContainer = () => {
     // register={register}
     // reset={reset}
     // handleSubmit={handleSubmit}
-    // page={page}
-    // setPage={setPage}
+    page={page}
+    setPage={setPage}
     // addDiary={addDiary}
     />
   );
 };
 
-export default DiaryWriteContainer
+export default (DiaryWriteContainer)
