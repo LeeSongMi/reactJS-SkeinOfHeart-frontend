@@ -1,9 +1,13 @@
 import React, { useState } from 'react'
 import DiaryListPresenter from './DiaryListPresenter'
 const DiaryListContainer = () => {
-    const [clickDiary, setClickDiary] = useState(-1)
-    const [diaryView, setDiaryView] = useState(false)
-    const [cloud, setCloud] = useState(false)
+    // 클릭한 다이어리 값을 저장
+    const [clickDiary, setClickDiary] = useState(-1)  
+    // 다이어리 디테일 뷰 모달 띄우는 변수
+    const [diaryView, setDiaryView] = useState(false) 
+    //워드 클라우드 숨기기 or 보이기 상태 
+    const [cloud, setCloud] = useState(false) 
+
     const getDiaryList = () => {
         // axios({
         //   method: 'post',
@@ -128,12 +132,14 @@ const DiaryListContainer = () => {
         const no = e.currentTarget.id
         const target = document.getElementsByClassName(`word_cloud ${no}`).item(1)
         const beforeTar = document.getElementsByClassName(`word_cloud ${clickDiary}`).item(1)
-        // target.style.visibility = 'visible'
-        // 이전에 클릭된 다이어리가 있다면 이전 다이어리의 워드클라우드를 숨김
-        // if (clickDiary !== -1) {
-        //     beforeTar.style.visibility = 'hidden'
-        // }
-        setCloud(true)
+    
+        //클릭한 다이어리 다시 클릭시 워드 클라우드 숨김 처리
+        if(clickDiary === e.currentTarget.id){
+          setCloud(false)
+        }else{
+          setCloud(true)
+        }
+        
     }
 
     return <DiaryListPresenter diary={diary} clickDiary={clickDiary} changeDiary={changeDiary} diaryListSlickSetting={diaryListSlickSetting} cloud={cloud} setCloud={setCloud} />
