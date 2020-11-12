@@ -1,4 +1,27 @@
 #diaryWrite {
-  height: 50vh;
+  height: 60vh;
+  padding: 5%;
+}
+#diaryWrite .writeArea {
+  display: flex;
   justify-content: center;
+}
+#diaryWrite .writeArea .writeForm{
+  display: inline-block;
+  justify-content: center;
+}
+h1 {
+  text-align: center;
+}
+#diaryWrite .writeArea .writeForm .writeDiary{
+  width: 45vw;
+  height: 40vh;
+  resize: none;
+  padding: 5px;
+}
+#diaryWrite .writeArea .writeForm .writeSubmit{
+  width: -webkit-fill-available;
+  justify-self: center;
+  margin: 5px;
+  height: 40px;
 }

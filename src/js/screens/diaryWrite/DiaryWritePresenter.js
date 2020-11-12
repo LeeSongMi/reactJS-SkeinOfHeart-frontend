@@ -14,14 +14,16 @@ const DiaryWritePresenter = () => {
       <div id="diaryWrite">
         <h1>다이어리 작성</h1>
         <div className="writeArea">
-          <form onSubmit={handleSubmit(writeDiary)}>
+          <form className="writeForm" onSubmit={handleSubmit(writeDiary)}>
             <textarea
+              className="writeDiary"
               type="textarea"
               id="inContent"
               name="content"
               ref={register}
             />
-            <input type="submit" value="글쓰기" />
+            <br/>
+            <input className="writeSubmit" type="submit" value="글쓰기" />
           </form>
         </div>
       </div>
