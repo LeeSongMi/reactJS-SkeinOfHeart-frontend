@@ -16,7 +16,7 @@
   background-position-x: center;
   background-size: 60vh;
   background-repeat: no-repeat;
-  height: 28vh;
+  height: 50vh;
   
   /* background-image: url('../../public/image/speech-bubble.png'); */
 }
@@ -85,4 +85,15 @@
   background-color: #e98585;
   /* font-weight: bold; */
   color: white;
+}
+.modal-content {
+  /* max-height: 800px; */
+  height: 80vh;
+  width: 50vw;
+}
+.modal-body {
+  padding-top: 20px;
+  text-align: center;
+  overflow-y: scroll;
+  max-height: auto;
 }

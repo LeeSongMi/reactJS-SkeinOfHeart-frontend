@@ -6,7 +6,7 @@ import { getElementError } from '@testing-library/react'
 import { indexOf } from 'lodash'
 
 const DiaryListPresenter = ({ diary, clickDiary, changeDiary, diaryListSlickSetting, cloud, setCloud, diaryModal, setDiaryViewModal, modalHandler }) => {
-    // console.log(diary[clickDiary].wordCloud)
+    console.table(diary[clickDiary === -1 ? 0 : clickDiary])
     return (
         <>
             <div id="diaryList">

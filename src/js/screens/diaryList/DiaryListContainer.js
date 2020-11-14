@@ -196,7 +196,7 @@ const DiaryListContainer = () => {
                 modalHandler={modalHandler}
             />
             <ToastContainer />
-            <ModalForDetailView diaryModal={diaryModal} setDiaryViewModal={setDiaryViewModal} clickDiary={clickDiary} />
+            <ModalForDetailView diary={diary} diaryModal={diaryModal} setDiaryViewModal={setDiaryViewModal} clickDiary={clickDiary} />
         </>
     )
 }
