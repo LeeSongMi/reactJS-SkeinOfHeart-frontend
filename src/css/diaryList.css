@@ -8,13 +8,13 @@
 #diaryList .wordCloud{
   /* padding: 3%; */
   margin-top: 5%;
-  padding-top: 12vh;
+  padding-top: 10vh;
   padding-bottom: 15vh;
   display: flex;
   justify-content: center;
   background: url('/image/speech-bubble.png');
   background-position-x: center;
-  background-size: 600px;
+  background-size: 60vh;
   background-repeat: no-repeat;
   height: 28vh;
   
@@ -24,7 +24,7 @@
   display: none;
 }
 #diaryList .wordCloud .word_cloud{
-  width: 20vw;
+  width: auto;
   height: 20vh;
   padding: 10px;
   
@@ -84,6 +84,5 @@
   border-radius: 25px;
   background-color: #e98585;
   /* font-weight: bold; */
-  font-size: ;
   color: white;
 }

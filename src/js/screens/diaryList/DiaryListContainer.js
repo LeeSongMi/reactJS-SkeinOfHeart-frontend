@@ -1,12 +1,18 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import { useHistory } from 'react-router-dom'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 import DiaryListPresenter from './DiaryListPresenter'
+import ModalForDetailView from './ModalForDetailView'
 const DiaryListContainer = () => {
     // 클릭한 다이어리 값을 저장
-    const [clickDiary, setClickDiary] = useState(-1)  
+    const [clickDiary, setClickDiary] = useState(-1)
     // 다이어리 디테일 뷰 모달 띄우는 변수
-    const [diaryView, setDiaryView] = useState(false) 
-    //워드 클라우드 숨기기 or 보이기 상태 
-    const [cloud, setCloud] = useState(false) 
+    const [diaryModal, setDiaryViewModal] = useState(false)
+    //워드 클라우드 숨기기 or 보이기 상태
+    const [cloud, setCloud] = useState(false)
+
+    const history = useHistory()
 
     const getDiaryList = () => {
         // axios({
@@ -23,6 +29,20 @@ const DiaryListContainer = () => {
         // reset()
         // })
     }
+
+    useEffect(() => {
+        /* 뒤로 가기 시 모달 닫기 */
+        // if (diaryModal) {
+        //     // history.push('/')
+        //     history.replace('/')
+        //     window.addEventListener('popstate', setDiaryViewModal(false))
+        // }
+        // if (!diaryModal) {
+        //     return () => {
+        //         // window.removeEventListener('popstate', setDiaryViewModal(false))
+        //     }
+        // }
+    }, [diaryModal])
     const diary = [
         {
             title: '오늘의 일기',
@@ -105,7 +125,6 @@ const DiaryListContainer = () => {
                     slidesToShow: 3,
                     slidesToScroll: 3,
                     infinite: true,
-                    dots: true,
                 },
             },
             {
@@ -132,17 +151,54 @@ const DiaryListContainer = () => {
         const no = e.currentTarget.id
         const target = document.getElementsByClassName(`word_cloud ${no}`).item(1)
         const beforeTar = document.getElementsByClassName(`word_cloud ${clickDiary}`).item(1)
-    
+
         //클릭한 다이어리 다시 클릭시 워드 클라우드 숨김 처리
-        if(clickDiary === e.currentTarget.id){
-          setCloud(false)
-        }else{
-          setCloud(true)
+        if (clickDiary === e.currentTarget.id) {
+            setCloud(false)
+            setClickDiary(-1)
+        } else {
+            setCloud(true)
         }
-        
+    }
+    // const {addToast} = useToasts()
+    const modalHandler = () => {
+        if (clickDiary === -1) {
+            toast('펼칠 일기를 선택해주세요', {
+                position: "top-center",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                });
+
+        } else {
+            if (diaryModal) {
+                setDiaryViewModal(false)
+            } else {
+                setDiaryViewModal(true)
+            }
+        }
     }
 
-    return <DiaryListPresenter diary={diary} clickDiary={clickDiary} changeDiary={changeDiary} diaryListSlickSetting={diaryListSlickSetting} cloud={cloud} setCloud={setCloud} />
+    return (
+        <>
+            <DiaryListPresenter
+                diary={diary}
+                clickDiary={clickDiary}
+                changeDiary={changeDiary}
+                diaryListSlickSetting={diaryListSlickSetting}
+                cloud={cloud}
+                setCloud={setCloud}
+                diaryModal={diaryModal}
+                setDiaryViewModal={setDiaryViewModal}
+                modalHandler={modalHandler}
+            />
+            <ToastContainer />
+            <ModalForDetailView diaryModal={diaryModal} setDiaryViewModal={setDiaryViewModal} clickDiary={clickDiary} />
+        </>
+    )
 }
 
 export default DiaryListContainer

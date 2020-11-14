@@ -5,15 +5,15 @@ import ReactDOM from 'react-dom'
 import { getElementError } from '@testing-library/react'
 import { indexOf } from 'lodash'
 
-const DiaryListPresenter = ({ diary, clickDiary,changeDiary, diaryListSlickSetting,cloud,setCloud }) => {
+const DiaryListPresenter = ({ diary, clickDiary, changeDiary, diaryListSlickSetting, cloud, setCloud, diaryModal, setDiaryViewModal, modalHandler }) => {
     // console.log(diary[clickDiary].wordCloud)
     return (
         <>
             <div id="diaryList">
                 <h1>다이어리 리스트</h1>
                 {/* <img src={diary.diary[0].wordCloud} /> */}
-                <div className={`wordCloud ${cloud}`} >
-                    <img className="word_cloud" hidden={!cloud} src={diary[clickDiary===-1?0:clickDiary].wordCloud} />
+                <div className={`wordCloud ${cloud}`}>
+                    <img className="word_cloud" hidden={!cloud} src={diary[clickDiary === -1 ? 0 : clickDiary].wordCloud} />
                 </div>
                 <SliderSlick {...diaryListSlickSetting}>
                     {diary.map((info, index) => (
@@ -30,8 +30,11 @@ const DiaryListPresenter = ({ diary, clickDiary,changeDiary, diaryListSlickSetti
                                     onClick={(e) => {
                                         changeDiary(e)
                                     }}>
-                                    <img src={info.cover} width="150px" height="200px"></img><br/>
-                                    <font className="bookTitle">{info.title}</font><br/><br/>
+                                    <img src={info.cover} width="150px" height="200px"></img>
+                                    <br />
+                                    <font className="bookTitle">{info.title}</font>
+                                    <br />
+                                    <br />
                                     <font className="bookContent">{info.content}</font>
                                 </div>
                             </div>
@@ -39,7 +42,16 @@ const DiaryListPresenter = ({ diary, clickDiary,changeDiary, diaryListSlickSetti
                     ))}
                 </SliderSlick>
                 <div className="btnDiv">
-                <button className="viewBtn">일기장 펼치기</button>
+                    {diaryModal ? (
+                        <button className="viewBtn" onClick={() => modalHandler()}>
+                            일기장 닫기
+                        </button>
+                    ) : (
+                        <button className="viewBtn" onClick={() => modalHandler()}>
+                            일기장 펼치기
+                        </button>
+                    )}
+                    
                 </div>
             </div>
         </>
