@@ -1,14 +1,55 @@
 #diaryList {
-  height: 50vh;
+  height: auto;
   justify-content: center;
   padding: 5%;
+  /* background-color: #ffcccc; */
 
 }
+#diaryList .wordCloud{
+  /* padding: 3%; */
+  margin-top: 5%;
+  padding-top: 10vh;
+  padding-bottom: 5vh;
+  display: flex;
+  justify-content: center;
+  background: url('/image/speech-bubble.png');
+  background-position-x: center;
+  background-size: 60vh;
+  background-repeat: no-repeat;
+  height: 35vh;
+  
+  /* background-image: url('../../public/image/speech-bubble.png'); */
+}
+#diaryList .wordCloud.false{
+  display: none;
+}
+#diaryList .wordCloud .word_cloud{
+  width: auto;
+  height: 20vh;
+  padding: 10px;
+  
+}
+#diaryList .book{
+  display: flex;
+  justify-content: center;
+  width: 250px;
+  height: 350px;
+  /* margin: 25px 25px; */
+  margin-bottom: 100px;
 
-.book_cover{
-  height:200px;
-  width: 500px;
-  padding: 50px 50px;
+
+}
+#diaryList .book .book_cover{
+  height:350px;
+  width: 200px;
+  margin: 25px 25px;
+  padding: 25px 25px;
+  text-align: center;
+  border: 2px solid #ffb8b8;
+  background-color: white;
+  border-radius: 25px;
+  margin-top: 0%;
+
 }
 .slick-track{
   width:80% !important;
@@ -18,9 +59,41 @@
 .slick-list{
   height: auto;
   margin: 3%;
+  margin-top: 0%;
   overflow-x: hidden;
   overflow-y: hidden;
 }
-.word_cloud{
+/* .word_cloud{
   visibility: hidden;
+} */
+#diaryList .book .book_cover .bookTitle{
+  font-size: 20px;
+  font-weight: bold;
+  color: #e98585;
+}
+#diaryList .book .book_cover .bookContent{
+}
+#diaryList .btnDiv{
+  display: flex;
+  justify-content: center;
+}
+#diaryList .btnDiv .viewBtn{
+  width: 30%;
+  height: 40px;
+  border: none;
+  border-radius: 25px;
+  background-color: #e98585;
+  /* font-weight: bold; */
+  color: white;
+}
+.modal-content {
+  /* max-height: 800px; */
+  height: 80vh;
+  width: 50vw;
+}
+.modal-body {
+  padding-top: 20px;
+  text-align: center;
+  overflow-y: scroll;
+  max-height: auto;
 }

@@ -4,3 +4,10 @@
 # misc
 package-lock.json
 yarn.lock
+
+!/node_modules/react-calendar
+/node_modules/react-calendar/*
+!/node_modules/react-calendar/dist
+/node_modules/react-calendar/dist/*
+!/node_modules/react-calendar/dist/Calendar.css
+

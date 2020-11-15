@@ -1,0 +1,14 @@
+#calendar {
+    padding: 5% 10%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+#calendar .calendar.left {
+    width: 20vw;
+}
+#calendar .calendar.right {
+    width: 70%;
+    box-sizing: revert;
+}
