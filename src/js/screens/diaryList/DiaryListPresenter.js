@@ -6,9 +6,10 @@ import { getElementError } from '@testing-library/react'
 const DiaryListPresenter = ({ diary, clickDiary, changeDiary, diaryListSlickSetting, cloud, setCloud, diaryModal, setDiaryViewModal, modalHandler }) => {
     console.table(diary[clickDiary === -1 ? 0 : clickDiary])
     return (
-        <>
-            <h1>다이어리 리스트</h1>
-            <div id="diaryList" className="main-div" style={{ height: window.innerHeight }}>
+        <div id="diaryList" className="main-div" style={{ height: window.innerHeight }}>
+            <div className="content">
+                <h1>다이어리 리스트</h1>
+
                 {/* <img src={diary.diary[0].wordCloud} /> */}
                 <div className={`wordCloud ${cloud}`}>
                     <img className="word_cloud" hidden={!cloud} src={diary[clickDiary === -1 ? 0 : clickDiary].wordCloud} />
@@ -51,7 +52,7 @@ const DiaryListPresenter = ({ diary, clickDiary, changeDiary, diaryListSlickSett
                     )}
                 </div>
             </div>
-        </>
+        </div>
     )
 }
 
