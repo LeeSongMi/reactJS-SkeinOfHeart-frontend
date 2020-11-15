@@ -1,15 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Gugi&display=swap');
+
 #main {
-  height: 50vh;
-  justify-content: center;
-  padding: 5%;
-
+    justify-content: center;
+    /* background-color: #ffcccc; */
 }
 
-#main .title {
-  justify-content: center;
-  display: grid;
+/* main .content */
+#main .content {
+    justify-content: center;
 }
 
-#main .title .logo {
-  font-size: 80px;
+#main .content .title {
+  font-size: 35px;
+  font-family: 'Gugi', cursive;
+  color: #B0988E;
+}
+
+#main .content button {
+    margin-top: 2%;
+    background-color: white;
+    border: none;
+    width: 30%;
+    height: 39px;
+    border-radius: 13px;
+    font-family: 'Gugi', cursive;
 }
