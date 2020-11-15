@@ -6,6 +6,7 @@
   background-color: #DBCBBE;
 }
 
+
 #button {
   background-color: #b0988e;
   color: white;
@@ -13,3 +14,13 @@
   border-radius: 13px;
   font-family: 'Gugi', cursive;
 }
+
+#root > h1 {
+  text-align: center;
+  font-family: 'Gugi',cursive;
+  color: #b0988e;
+  font-size: 35px;
+  text-shadow: 2px  1px 1px #eee7df;
+  margin: 5% 0%;
+}
+

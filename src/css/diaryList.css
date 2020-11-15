@@ -1,5 +1,6 @@
 #diaryList {
-  height: auto;
+  height: 80vh;
+  display: contents;
   justify-content: center;
   padding: 5%;
   /* background-color: #ffcccc; */
@@ -14,9 +15,9 @@
   justify-content: center;
   background: url('/image/speech-bubble.png');
   background-position-x: center;
-  background-size: 60vh;
+  background-size: 70vh;
   background-repeat: no-repeat;
-  height: 35vh;
+  height: 50vh;
   
   /* background-image: url('../../public/image/speech-bubble.png'); */
 }
@@ -25,7 +26,7 @@
 }
 #diaryList .wordCloud .word_cloud{
   width: auto;
-  height: 20vh;
+  height: 30vh;
   padding: 10px;
   
 }
@@ -35,7 +36,8 @@
   width: 250px;
   height: 350px;
   /* margin: 25px 25px; */
-  margin-bottom: 100px;
+  margin-bottom: 30px;
+  margin-top: 20px;
 
 
 }
@@ -45,7 +47,7 @@
   margin: 25px 25px;
   padding: 25px 25px;
   text-align: center;
-  border: 2px solid #ffb8b8;
+  border: 2px solid #b0988e;
   background-color: white;
   border-radius: 25px;
   margin-top: 0%;
@@ -69,9 +71,10 @@
 #diaryList .book .book_cover .bookTitle{
   font-size: 20px;
   font-weight: bold;
-  color: #e98585;
+  color: #b0988e;
 }
 #diaryList .book .book_cover .bookContent{
+  color: #b0988e;
 }
 #diaryList .btnDiv{
   display: flex;
@@ -81,10 +84,12 @@
   width: 30%;
   height: 40px;
   border: none;
-  border-radius: 25px;
-  background-color: #e98585;
+  border-radius: 13px;
+  background-color: #b0988e;
+  margin-bottom: 20px;
   /* font-weight: bold; */
   color: white;
+  font-family: 'Gugi',cursive;
 }
 .modal-content {
   /* max-height: 800px; */

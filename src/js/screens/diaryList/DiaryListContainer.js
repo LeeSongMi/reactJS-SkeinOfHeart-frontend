@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify'
 import '../../../css/diaryList.css'
+import '../../../css/commonStyle.css'
 import 'react-toastify/dist/ReactToastify.css'
 import DiaryListPresenter from './DiaryListPresenter'
 import ModalForDetailView from './ModalForDetailView'
@@ -50,60 +51,32 @@ const DiaryListContainer = () => {
             content: '오늘은 마음 실타래 일기를 써보자',
             wordCloud: 'image/wordCloud3.png',
             cover: 'image/yarn1.png',
+            date: '2020-11-16',
+            color: '#dbcbbe',
         },
         {
             title: '집가고싶다',
             content: '고양이가 최고양',
             wordCloud: 'image/wordCloud3.png',
             cover: 'image/yarn1.png',
+            date: '2020-11-16',
+            color: '#dbcbbe',
         },
         {
             title: '오늘의 일기',
             content: '오늘은 마음 실타래 일기를 써보자',
             wordCloud: 'image/wordCloud3.png',
             cover: 'image/yarn1.png',
+            date: '2020-11-16',
+            color: '#dbcbbe',
         },
         {
             title: '집가고싶다',
             content: '고양이가 최고양',
             wordCloud: 'image/wordCloud3.png',
             cover: 'image/yarn1.png',
-        },
-        {
-            title: '오늘의 일기',
-            content: '오늘은 마음 실타래 일기를 써보자',
-            wordCloud: 'image/wordCloud3.png',
-            cover: 'image/yarn1.png',
-        },
-        {
-            title: '집가고싶다',
-            content: '고양이가 최고양',
-            wordCloud: 'image/wordCloud3.png',
-            cover: 'image/yarn1.png',
-        },
-        {
-            title: '오늘의 일기',
-            content: '오늘은 마음 실타래 일기를 써보자',
-            wordCloud: 'image/wordCloud3.png',
-            cover: 'image/yarn1.png',
-        },
-        {
-            title: '집가고싶다',
-            content: '고양이가 최고양',
-            wordCloud: 'image/wordCloud3.png',
-            cover: 'image/yarn1.png',
-        },
-        {
-            title: '오늘의 일기',
-            content: '오늘은 마음 실타래 일기를 써보자',
-            wordCloud: 'image/wordCloud3.png',
-            cover: 'image/yarn1.png',
-        },
-        {
-            title: '집가고싶다',
-            content: '고양이가 최고양',
-            wordCloud: 'image/wordCloud3.png',
-            cover: 'image/yarn1.png',
+            date: '2020-11-16',
+            color: '#dbcbbe',
         },
     ]
 
@@ -165,15 +138,14 @@ const DiaryListContainer = () => {
     const modalHandler = () => {
         if (clickDiary === -1) {
             toast('펼칠 일기를 선택해주세요', {
-                position: "top-center",
+                position: 'top-center',
                 autoClose: 3000,
                 hideProgressBar: false,
                 closeOnClick: true,
                 pauseOnHover: true,
                 draggable: true,
                 progress: undefined,
-                });
-
+            })
         } else {
             if (diaryModal) {
                 setDiaryViewModal(false)
