@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify'
+import '../../../css/diaryList.css'
 import 'react-toastify/dist/ReactToastify.css'
 import DiaryListPresenter from './DiaryListPresenter'
 import ModalForDetailView from './ModalForDetailView'

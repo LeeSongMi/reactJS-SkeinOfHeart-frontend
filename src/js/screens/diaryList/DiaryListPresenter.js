@@ -1,5 +1,4 @@
 import React from 'react'
-import '../../../css/diaryList.css'
 import SliderSlick from 'react-slick'
 import ReactDOM from 'react-dom'
 import { getElementError } from '@testing-library/react'
