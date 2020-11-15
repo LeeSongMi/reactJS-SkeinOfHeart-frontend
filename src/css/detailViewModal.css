@@ -1,0 +1,11 @@
+.modal-content {
+    /* max-height: 800px; */
+    height: 80vh;
+    width: 50vw;
+  }
+  .modal-body {
+    padding-top: 20px;
+    text-align: center;
+    overflow-y: scroll;
+    max-height: auto;
+  }

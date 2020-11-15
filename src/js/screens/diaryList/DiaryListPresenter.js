@@ -30,7 +30,7 @@ const DiaryListPresenter = ({ diary, clickDiary, changeDiary, diaryListSlickSett
                                     onClick={(e) => {
                                         changeDiary(e)
                                     }}>
-                                    <img src={info.cover} width="150px" height="200px"></img>
+                                    <img src={info.cover} width="80vw" height="auto"></img>
                                     <br />
                                     <font className="bookTitle">{info.title}</font>
                                     <br />

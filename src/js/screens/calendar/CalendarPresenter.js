@@ -1,7 +1,7 @@
 import React from 'react'
 import Calendar from 'react-calendar'
 import 'react-calendar/dist/Calendar.css'
-const CalendarPresenter = ({ value, onChange }) => {
+const CalendarPresenter = ({ value, onChange, diary }) => {
     return (
         <>
             <h1>감정 캘린더</h1>
@@ -11,7 +11,7 @@ const CalendarPresenter = ({ value, onChange }) => {
                 </div>
                 <div className="calendar right"> 
                     <Calendar
-                        className={"emotionCalendar"} 
+                        className={diary.color} 
                         onChange={onChange} value={value}
                         onClickDay={()=>{console.log('하루를 클릭함')}} 
                         locale={'en-US'}/>

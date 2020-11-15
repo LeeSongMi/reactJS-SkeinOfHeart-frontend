@@ -50,61 +50,34 @@ const DiaryListContainer = () => {
             content: '오늘은 마음 실타래 일기를 써보자',
             wordCloud: 'image/wordCloud3.png',
             cover: 'image/yarn1.png',
+            date:'2020-11-16',
+            color:'#dbcbbe'
         },
         {
             title: '집가고싶다',
             content: '고양이가 최고양',
             wordCloud: 'image/wordCloud3.png',
             cover: 'image/yarn1.png',
+            date:'2020-11-16',
+            color:'#dbcbbe'
         },
         {
             title: '오늘의 일기',
             content: '오늘은 마음 실타래 일기를 써보자',
             wordCloud: 'image/wordCloud3.png',
             cover: 'image/yarn1.png',
+            date:'2020-11-16',
+            color:'#dbcbbe'
         },
         {
             title: '집가고싶다',
             content: '고양이가 최고양',
             wordCloud: 'image/wordCloud3.png',
             cover: 'image/yarn1.png',
+            date:'2020-11-16',
+            color:'#dbcbbe'
         },
-        {
-            title: '오늘의 일기',
-            content: '오늘은 마음 실타래 일기를 써보자',
-            wordCloud: 'image/wordCloud3.png',
-            cover: 'image/yarn1.png',
-        },
-        {
-            title: '집가고싶다',
-            content: '고양이가 최고양',
-            wordCloud: 'image/wordCloud3.png',
-            cover: 'image/yarn1.png',
-        },
-        {
-            title: '오늘의 일기',
-            content: '오늘은 마음 실타래 일기를 써보자',
-            wordCloud: 'image/wordCloud3.png',
-            cover: 'image/yarn1.png',
-        },
-        {
-            title: '집가고싶다',
-            content: '고양이가 최고양',
-            wordCloud: 'image/wordCloud3.png',
-            cover: 'image/yarn1.png',
-        },
-        {
-            title: '오늘의 일기',
-            content: '오늘은 마음 실타래 일기를 써보자',
-            wordCloud: 'image/wordCloud3.png',
-            cover: 'image/yarn1.png',
-        },
-        {
-            title: '집가고싶다',
-            content: '고양이가 최고양',
-            wordCloud: 'image/wordCloud3.png',
-            cover: 'image/yarn1.png',
-        },
+     
     ]
 
     // Slick Setting
