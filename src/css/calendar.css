@@ -6,7 +6,16 @@
 }
 
 #calendar .calendar.left {
+    display: flex;
+    justify-content: center;
     width: 20vw;
+    background-color: #b0988e;
+}
+#calendar .calendar.left .title{
+    font-size: 20px;
+    font-family: 'Gugi',cursive;
+    color: white;
+    padding-top:20px;
 }
 #calendar .calendar.right {
     width: 70%;

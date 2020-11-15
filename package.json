@@ -3,14 +3,19 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.32",
+    "@fortawesome/free-brands-svg-icons": "^5.15.1",
+    "@fortawesome/free-regular-svg-icons": "^5.15.1",
+    "@fortawesome/free-solid-svg-icons": "^5.15.1",
+    "@fortawesome/react-fontawesome": "^0.1.12",
     "@fseehawer/react-circular-slider": "^2.3.5",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "axios": "^0.21.0",
+    "bootstrap": "^4.0.0-alpha.6",
     "qs": "^6.9.4",
     "react": "^16.14.0",
-    "bootstrap": "^4.0.0-alpha.6",
     "react-addons-css-transition-group": "^15.6.2",
     "react-addons-transition-group": "^15.6.2",
     "react-bootstrap": "^1.4.0",
@@ -21,10 +26,10 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
     "react-slick": "^0.27.13",
-    "react-wordcloud": "^1.2.7",
-    "styled-components": "^5.2.1",
     "react-toastify": "^6.1.0",
-    "reactstrap": "^8.7.1"
+    "react-wordcloud": "^1.2.7",
+    "reactstrap": "^8.7.1",
+    "styled-components": "^5.2.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -47,5 +52,4 @@
       "last 1 safari version"
     ]
   }
-
 }
