@@ -57,8 +57,10 @@
 /* content: bottom-section */
 #diaryWrite .content .right-section {
     padding: 10px;
-    display: inline-flex;
     margin-top: 5px;
+    display: inline-block;
+    justify-content: center;
+    font-style: MapoFlowerIsland;
 }
 
 #diaryWrite .content .right-section > div {
@@ -67,11 +69,6 @@
     align-content: center;
 }
 
-#diaryWrite .content .right-section .writeForm {
-    display: inline-block;
-    justify-content: center;
-    font-style: MapoFlowerIsland;
-}
 #diaryWrite .content .right-section .writeForm .writeDiary {
     width: 40vw;
     height: 70vh;
@@ -84,7 +81,7 @@
     box-shadow: 5px 5px 5px #b0988e;
 }
 
-#diaryWrite .content .right-section .writeForm #button {
+#diaryWrite .content .right-section #button {
   width: 93%;
   height: 39px;
   margin-top: 8px;

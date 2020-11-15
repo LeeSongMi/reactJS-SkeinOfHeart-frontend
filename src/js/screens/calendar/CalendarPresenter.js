@@ -3,7 +3,7 @@ import Calendar from 'react-calendar'
 import 'react-calendar/dist/Calendar.css'
 const CalendarPresenter = ({ value, onChange, diary }) => {
     return (
-        <>
+        <div style={{ height: window.innerHeight}}>
             <h1>감정 캘린더</h1>
             <div id="calendar">
                 <div className="calendar left">
@@ -17,7 +17,7 @@ const CalendarPresenter = ({ value, onChange, diary }) => {
                         locale={'en-US'}/>
                 </div>  
             </div>
-        </>
+        </div>
     )
 }
 
