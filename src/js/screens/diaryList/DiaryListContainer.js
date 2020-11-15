@@ -52,7 +52,7 @@ const DiaryListContainer = () => {
             wordCloud: 'image/wordCloud3.png',
             cover: 'image/yarn1.png',
             date: '2020-11-16',
-            color: '#dbcbbe',
+            color: '#abded7',
         },
         {
             title: '집가고싶다',
@@ -68,7 +68,7 @@ const DiaryListContainer = () => {
             wordCloud: 'image/wordCloud3.png',
             cover: 'image/yarn1.png',
             date: '2020-11-16',
-            color: '#dbcbbe',
+            color: '#b0988e',
         },
         {
             title: '집가고싶다',
@@ -76,7 +76,7 @@ const DiaryListContainer = () => {
             wordCloud: 'image/wordCloud3.png',
             cover: 'image/yarn1.png',
             date: '2020-11-16',
-            color: '#dbcbbe',
+            color: '#eee7df',
         },
     ]
 
