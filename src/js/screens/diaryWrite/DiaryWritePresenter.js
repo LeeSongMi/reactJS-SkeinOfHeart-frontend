@@ -33,9 +33,8 @@ const DiaryWritePresenter = ({ handleSubmit, addDiary, register}) => {
                 {/* {isWordcloud ? <ReactWordcloud words={words} /> : <></>} */}
                 <div className="content">
                     <div className="left-section">
-                        {/* <ReactWordcloud words={words}/> */}
                         <h1>
-                            꼬인 채 방치해두었던 당신의 마음 실타래, <br /> 오늘은 풀어보시겠어요?
+                            당신의 오늘의 감정이 궁금해요. 오늘 어떤 날이었나요?
                         </h1>
                     </div>
                     <div className="right-section writeArea">

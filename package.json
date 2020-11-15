@@ -9,9 +9,8 @@
     "@testing-library/user-event": "^7.1.2",
     "axios": "^0.21.0",
     "qs": "^6.9.4",
-    "react": "^16.13.1",
-    "bootstrap": "^4.0.0-alpha.6",
     "react": "^16.14.0",
+    "bootstrap": "^4.0.0-alpha.6",
     "react-addons-css-transition-group": "^15.6.2",
     "react-addons-transition-group": "^15.6.2",
     "react-bootstrap": "^1.4.0",
@@ -23,7 +22,7 @@
     "react-scripts": "3.4.3",
     "react-slick": "^0.27.13",
     "react-wordcloud": "^1.2.7",
-    "styled-components": "^5.2.1"
+    "styled-components": "^5.2.1",
     "react-toastify": "^6.1.0",
     "reactstrap": "^8.7.1"
   },

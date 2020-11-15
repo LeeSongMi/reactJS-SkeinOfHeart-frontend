@@ -1,24 +1,56 @@
 @import url('https://fonts.googleapis.com/css2?family=Gugi&display=swap');
+@font-face {
+    font-family: 'MapoFlowerIsland';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/MapoFlowerIslandA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
 #main {
     justify-content: center;
-    /* background-color: #ffcccc; */
+    display: flow-root;
 }
+
+/* main .header */
+#main .header {
+    height: 10%;
+    text-align: center;
+}
+
+#main .header .title {
+    font-size: 35px;
+    font-family: 'Gugi', cursive;
+    color: #B0988E;
+    text-shadow: 2px 1px 1px #EED7DF;
+    margin-top: 20px;
+  }
 
 /* main .content */
 #main .content {
     justify-content: center;
+    text-align: center;
+    background-color: white;
+    box-shadow: 5px 5px 5px #B0988E;
+    width: 60%;
+    height: 80%;
+    margin: auto;
 }
 
-#main .content .title {
-  font-size: 35px;
-  font-family: 'Gugi', cursive;
-  color: #B0988E;
+#main .content .description {
+    padding: 30px 0px;
+    font-family: MapoFlowerIsland;
+}
+#main .content .logo-section {
+    height: 50%
+}
+#main .content .logo-section img {
+    max-height: 100%;
 }
 
 #main .content button {
-    margin-top: 2%;
-    background-color: white;
+    margin-top: 6%;
+    background-color: #B0988E;
+    color: white;
     border: none;
     width: 30%;
     height: 39px;

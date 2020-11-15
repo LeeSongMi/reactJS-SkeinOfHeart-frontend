@@ -2,6 +2,8 @@
   height: 60vh;
   padding: 5%;
 }
+
+/* writeArea */
 #diaryWrite .writeArea {
   display: flex;
   justify-content: center;
