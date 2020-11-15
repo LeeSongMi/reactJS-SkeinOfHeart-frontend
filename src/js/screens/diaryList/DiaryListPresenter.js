@@ -1,16 +1,14 @@
 import React, { useState } from 'react'
-import '../../../css/diaryList.css'
 import SliderSlick from 'react-slick'
 import ReactDOM from 'react-dom'
 import { getElementError } from '@testing-library/react'
-import { indexOf } from 'lodash'
 
 const DiaryListPresenter = ({ diary, clickDiary, changeDiary, diaryListSlickSetting, cloud, setCloud, diaryModal, setDiaryViewModal, modalHandler }) => {
     console.table(diary[clickDiary === -1 ? 0 : clickDiary])
     return (
         <>
-            <div id="diaryList" className="main-div" style={{height:window.innerHeight}}>
-                <h1>다이어리 리스트</h1>
+            <h1>다이어리 리스트</h1>
+            <div id="diaryList" className="main-div" style={{ height: window.innerHeight }}>
                 {/* <img src={diary.diary[0].wordCloud} /> */}
                 <div className={`wordCloud ${cloud}`}>
                     <img className="word_cloud" hidden={!cloud} src={diary[clickDiary === -1 ? 0 : clickDiary].wordCloud} />
@@ -51,7 +49,6 @@ const DiaryListPresenter = ({ diary, clickDiary, changeDiary, diaryListSlickSett
                             일기장 펼치기
                         </button>
                     )}
-                    
                 </div>
             </div>
         </>
