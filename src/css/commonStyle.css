@@ -5,3 +5,11 @@
 #root > div {
   background-color: #DBCBBE;
 }
+
+#button {
+  background-color: #b0988e;
+  color: white;
+  border: none;
+  border-radius: 13px;
+  font-family: 'Gugi', cursive;
+}

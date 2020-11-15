@@ -34,8 +34,8 @@ const MainPresenter = ({ test }) => {
                             <img alt="원고지 이미지"></img>
                         </div>
                     </div> */}
-                    <button type="button" className="btn btn-warning" onClick={scrollSection2}>
-                        글쓰러가기
+                    <button id="button" className="btn btn-warning" onClick={scrollSection2}>
+                        글쓰러 가기
                     </button>
                 </div>
             </div>

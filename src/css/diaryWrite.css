@@ -1,29 +1,91 @@
-#diaryWrite {
-  height: 60vh;
-  padding: 5%;
+@import url('https://fonts.googleapis.com/css2?family=Gugi&display=swap');
+@font-face {
+    font-family: 'MapoFlowerIsland';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/MapoFlowerIslandA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
-/* writeArea */
-#diaryWrite .writeArea {
-  display: flex;
-  justify-content: center;
+#diaryWrite {
+    justify-content: center;
+    display: flex;
 }
-#diaryWrite .writeArea .writeForm{
-  display: inline-block;
-  justify-content: center;
+/* content */
+#diaryWrite .content {
+    width: 90%;
+    height: 90%;
+    border: solid 2px white;
+    display: flex;
+    margin: auto;
 }
-h1 {
-  text-align: center;
+#diaryWrite .content > div {
+    width: 50%;
 }
-#diaryWrite .writeArea .writeForm .writeDiary{
-  width: 45vw;
-  height: 40vh;
-  resize: none;
-  padding: 5px;
+
+/* content: top-section */
+#diaryWrite .content .left-section {
+    text-align: center;
+    align-content: center;
+    justify-content: center;
 }
-#diaryWrite .writeArea .writeForm .writeSubmit{
-  width: -webkit-fill-available;
-  justify-self: center;
-  margin: 5px;
-  height: 40px;
+#diaryWrite .content .left-section .title {
+    font-size: 35px;
+    font-family: 'Gugi', cursive;
+    color: #b0988e;
+    text-shadow: 2px 1px 1px #eed7df;
+    margin: 20px 0px;
+}
+
+#diaryWrite .content .left-section img {
+    width: 80%;
+    margin-bottom: 10px;
+}
+
+#diaryWrite .content .left-section .description {
+    font-family: MapoFlowerIsland;
+    line-height: 150%;
+    background-color: white;
+    font-size: 0.9rem;
+    width: 80%;
+    height: fit-content;
+    padding: 10px;
+    margin: auto;
+    box-shadow: 5px 5px 5px #b0988e;
+    vertical-align: middle;
+}
+
+/* content: bottom-section */
+#diaryWrite .content .right-section {
+    padding: 10px;
+    display: inline-flex;
+    margin-top: 5px;
+}
+
+#diaryWrite .content .right-section > div {
+    width: 50%;
+    font-family: MapoFlowerIsland;
+    align-content: center;
+}
+
+#diaryWrite .content .right-section .writeForm {
+    display: inline-block;
+    justify-content: center;
+    font-style: MapoFlowerIsland;
+}
+#diaryWrite .content .right-section .writeForm .writeDiary {
+    width: 40vw;
+    height: 70vh;
+    resize: none;
+    padding: 20px;
+    overflow-y: auto;
+    background-image: url('/image/pages/grid.jpg');
+    background-size: 550px;
+    border: none;
+    box-shadow: 5px 5px 5px #b0988e;
+}
+
+#diaryWrite .content .right-section .writeForm #button {
+  width: 93%;
+  height: 39px;
+  margin-top: 8px;
 }
