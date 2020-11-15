@@ -13,6 +13,8 @@ const DiaryListContainer = () => {
     const [diaryModal, setDiaryViewModal] = useState(false)
     //워드 클라우드 숨기기 or 보이기 상태
     const [cloud, setCloud] = useState(false)
+    
+    const [autoSlide,setAutoSlide] =useState(true)
 
     const history = useHistory()
 
@@ -47,7 +49,7 @@ const DiaryListContainer = () => {
     }, [diaryModal])
     const diary = [
         {
-            title: '오늘의 일기',
+            title: '오늘의 일기1',
             content: '오늘은 마음 실타래 일기를 써보자',
             wordCloud: 'image/wordCloud3.png',
             cover: 'image/yarn1.png',
@@ -55,7 +57,7 @@ const DiaryListContainer = () => {
             color: '#abded7',
         },
         {
-            title: '집가고싶다',
+            title: '집가고싶다2',
             content: '고양이가 최고양',
             wordCloud: 'image/wordCloud3.png',
             cover: 'image/yarn1.png',
@@ -63,7 +65,7 @@ const DiaryListContainer = () => {
             color: '#dbcbbe',
         },
         {
-            title: '오늘의 일기',
+            title: '오늘의 일기3',
             content: '오늘은 마음 실타래 일기를 써보자',
             wordCloud: 'image/wordCloud3.png',
             cover: 'image/yarn1.png',
@@ -71,7 +73,7 @@ const DiaryListContainer = () => {
             color: '#b0988e',
         },
         {
-            title: '집가고싶다',
+            title: '집가고싶다4',
             content: '고양이가 최고양',
             wordCloud: 'image/wordCloud3.png',
             cover: 'image/yarn1.png',
@@ -85,11 +87,12 @@ const DiaryListContainer = () => {
         dots: false,
         focusOnSelect: true,
         infinite: true,
-        speed: 500,
+        speed: 1000,
+        
         slidesToShow: 3,
         slidesToScroll: 1,
-        initialSlide: 0,
-        autoplay: true,
+        initialSlide: 1,
+        autoplay: {autoSlide},
         centerMode: true,
         arrows: false,
         responsive: [
@@ -97,7 +100,7 @@ const DiaryListContainer = () => {
                 breakpoint: 1024,
                 settings: {
                     slidesToShow: 3,
-                    slidesToScroll: 3,
+                    slidesToScroll: 1,
                     infinite: true,
                 },
             },
@@ -149,8 +152,11 @@ const DiaryListContainer = () => {
         } else {
             if (diaryModal) {
                 setDiaryViewModal(false)
+                setAutoSlide(true)
             } else {
                 setDiaryViewModal(true)
+                setAutoSlide(false)
+
             }
         }
     }
