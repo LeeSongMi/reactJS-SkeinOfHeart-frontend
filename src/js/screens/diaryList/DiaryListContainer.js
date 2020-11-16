@@ -105,11 +105,11 @@ const DiaryListContainer = () => {
                 },
             },
             {
-                breakpoint: 600,
+                breakpoint: 1000,
                 settings: {
                     slidesToShow: 2,
-                    slidesToScroll: 2,
-                    initialSlide: 2,
+                    slidesToScroll: 1,
+                    // initialSlide: 2,
                 },
             },
             {

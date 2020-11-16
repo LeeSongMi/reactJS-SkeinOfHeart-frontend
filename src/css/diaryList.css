@@ -6,9 +6,13 @@
 /* content */
 #diaryList .content {
   width: 90%;
-  height: 90%;
+  height: auto;
   border: solid 2px white;
   margin: auto;
+}
+#diaryList .content .title{
+  text-align: center;
+  margin-top:20px;
 }
 
 #diaryList .wordCloud{
@@ -38,7 +42,7 @@
 #diaryList .book{
   display: flex;
   justify-content: center;
-  width: 30vw;
+  width: 27vw;
   height: 350px;
   /* margin: 25px 25px; */
   margin-bottom: 30px;
@@ -48,8 +52,9 @@
 }
 #diaryList .book .book_cover{
   height:350px;
-  width: 30vw;
-  margin: 25px 25px;
+  width: 27vw;
+  min-width: 200px;
+  margin: 25px 50px;
   padding: 25px 25px;
   text-align: center;
   border: 2px solid #b0988e;
@@ -57,10 +62,11 @@
   border-radius: 25px;
   box-shadow: 5px 5px 5px #b0988e;
   margin-top: 0%;
+  cursor: pointer;
 
 }
 .slick-track{
-  width:80% !important;
+  width:60% !important;
   display: inline-flex;
   
 }
@@ -70,6 +76,11 @@
   margin-top: 0%;
   overflow-x: hidden;
   overflow-y: hidden;
+}
+#diaryList .slick-list .slick-track .slick-slide.slick-active.slick-center .book_cover{
+  border: #abded7 2px solid;
+  box-shadow: 5px 5px 5px #abded7;
+
 }
 /* .word_cloud{
   visibility: hidden;
