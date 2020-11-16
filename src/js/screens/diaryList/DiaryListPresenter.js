@@ -11,9 +11,9 @@ const DiaryListPresenter = ({ diary, clickDiary, changeDiary, diaryListSlickSett
                 <div className="title">다이어리 리스트</div>
 
                 {/* <img src={diary.diary[0].wordCloud} /> */}
-                <div className={`wordCloud ${cloud}`}>
-                    <img className="word_cloud" hidden={!cloud} src={diary[clickDiary === -1 ? 0 : clickDiary].wordCloud} />
-                </div>
+                {/* <div className={`wordCloud ${cloud}`}> */}
+                    {/* <img className="word_cloud" hidden={!cloud} src={diary[clickDiary === -1 ? 0 : clickDiary].wordCloud} /> */}
+                {/* </div> */}
                 <SliderSlick {...diaryListSlickSetting}>
                     {diary.map((info, index) => (
                         <>

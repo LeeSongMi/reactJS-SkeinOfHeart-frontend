@@ -38,7 +38,7 @@
 #diaryList .book{
   display: flex;
   justify-content: center;
-  width: 250px;
+  width: 30vw;
   height: 350px;
   /* margin: 25px 25px; */
   margin-bottom: 30px;
@@ -48,7 +48,7 @@
 }
 #diaryList .book .book_cover{
   height:350px;
-  width: 200px;
+  width: 30vw;
   margin: 25px 25px;
   padding: 25px 25px;
   text-align: center;
