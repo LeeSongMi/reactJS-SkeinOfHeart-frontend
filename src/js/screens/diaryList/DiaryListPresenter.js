@@ -8,7 +8,7 @@ const DiaryListPresenter = ({ diary, clickDiary, changeDiary, diaryListSlickSett
     return (
         <div id="diaryList" className="main-div" style={{ height: window.innerHeight }}>
             <div className="content">
-                <h1>다이어리 리스트</h1>
+                <div className="title">다이어리 리스트</div>
 
                 {/* <img src={diary.diary[0].wordCloud} /> */}
                 <div className={`wordCloud ${cloud}`}>

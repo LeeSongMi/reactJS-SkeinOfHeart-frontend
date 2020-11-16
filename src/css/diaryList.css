@@ -1,11 +1,16 @@
 #diaryList {
-  height: 80vh;
-  display: contents;
   justify-content: center;
-  padding: 5%;
-  /* background-color: #ffcccc; */
-
+  display: flex;
 }
+
+/* content */
+#diaryList .content {
+  width: 90%;
+  height: 90%;
+  border: solid 2px white;
+  margin: auto;
+}
+
 #diaryList .wordCloud{
   /* padding: 3%; */
   margin-top: 5%;
@@ -17,7 +22,7 @@
   background-position-x: center;
   background-size: 70vh;
   background-repeat: no-repeat;
-  height: 50vh;
+  height: 20vh;
   
   /* background-image: url('../../public/image/speech-bubble.png'); */
 }
@@ -50,6 +55,7 @@
   border: 2px solid #b0988e;
   background-color: white;
   border-radius: 25px;
+  box-shadow: 5px 5px 5px #b0988e;
   margin-top: 0%;
 
 }
@@ -84,7 +90,6 @@
   width: 30%;
   height: 40px;
   border: none;
-  border-radius: 13px;
   background-color: #b0988e;
   margin-bottom: 20px;
   /* font-weight: bold; */

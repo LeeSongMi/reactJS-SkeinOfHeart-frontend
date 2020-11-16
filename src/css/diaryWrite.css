@@ -18,21 +18,15 @@
     display: flex;
     margin: auto;
 }
-#diaryWrite .content > div {
-    width: 50%;
-}
 
 /* content: top-section */
 #diaryWrite .content .left-section {
     text-align: center;
     align-content: center;
     justify-content: center;
+    width: 60%;
 }
 #diaryWrite .content .left-section .title {
-    font-size: 35px;
-    font-family: 'Gugi', cursive;
-    color: #b0988e;
-    text-shadow: 2px 1px 1px #eed7df;
     margin: 20px 0px;
 }
 
