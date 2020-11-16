@@ -42,9 +42,10 @@
 #diaryList .book{
   display: flex;
   justify-content: center;
-  width: 27vw;
+  width: 18vw;
+  min-width: 200px;
   height: 350px;
-  /* margin: 25px 25px; */
+  margin: 25px 25px;
   margin-bottom: 30px;
   margin-top: 20px;
 
@@ -52,7 +53,7 @@
 }
 #diaryList .book .book_cover{
   height:350px;
-  width: 27vw;
+  width: 18vw;
   min-width: 200px;
   margin: 25px 50px;
   padding: 25px 25px;

@@ -5,7 +5,7 @@ const CalendarPresenter = ({ value, onChange, diary }) => {
     console.table(value)
     return (
         <div style={{ height: window.innerHeight}}>
-            <h1>감정 캘린더</h1>
+            <h1 className="title">감정 캘린더</h1>
             <div id="calendar">
                 <div className="calendar left"> 
                 <font className="title">감정 캘린더</font>
