@@ -3,6 +3,7 @@ import Calendar from 'react-calendar'
 import 'react-calendar/dist/Calendar.css'
 const CalendarPresenter = ({ value, onChange, diary }) => {
     console.table(value)
+ 
     return (
         <div style={{ height: window.innerHeight}}>
             <h1 className="title">감정 캘린더</h1>
@@ -17,7 +18,9 @@ const CalendarPresenter = ({ value, onChange, diary }) => {
                         className={diary.color} 
                         onChange={onChange} value={value}
                         onClickDay={()=>{console.log('하루를 클릭함')}} 
-                        locale={'en-US'}/>
+                        locale={'en-US'}
+                        diary={diary}
+                        />
                 </div>  
             </div>
         </div>
