@@ -10,4 +10,9 @@ yarn.lock
 !/node_modules/react-calendar/dist
 /node_modules/react-calendar/dist/*
 !/node_modules/react-calendar/dist/Calendar.css
+!/node_modules/react-calendar/dist/esm/
+/node_modules/react-calendar/dist/esm/*
+!/node_modules/react-calendar/dist/esm/MonthView/
+/node_modules/react-calendar/dist/esm/MonthView/*
+!/node_modules/react-calendar/dist/esm/MonthView/day.js
 

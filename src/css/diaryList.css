@@ -21,6 +21,10 @@
     border: solid 2px white;
     margin: auto;
 }
+#diaryList .content .title{
+  text-align: center;
+  margin-top:20px;
+}
 
 #diaryList .wordCloud {
     /* padding: 3%; */
@@ -34,8 +38,6 @@
     background-size: 70vh;
     background-repeat: no-repeat;
     height: 20vh;
-
-    /* background-image: url('../../public/image/speech-bubble.png'); */
 }
 #diaryList .wordCloud.false {
     display: none;
@@ -76,6 +78,11 @@
     box-shadow: 5px 5px 5px #b0988e;
     margin-top: 0%;
 }
+.slick-track{
+  width:60% !important;
+  display: inline-flex;
+  
+}
 .slick-track {
     width: 80% !important;
     display: inline-flex;
@@ -86,6 +93,11 @@
     margin-top: 0%;
     overflow-x: hidden;
     overflow-y: hidden;
+}
+#diaryList .slick-list .slick-track .slick-slide.slick-active.slick-center .book_cover{
+  border: #abded7 2px solid;
+  box-shadow: 5px 5px 5px #abded7;
+
 }
 /* .word_cloud{
   visibility: hidden;

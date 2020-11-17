@@ -5,10 +5,50 @@ import 'bootstrap/dist/css/bootstrap.css'
 import '../../../css/detailViewModal.css'
 import { faHeartbeat } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import ReactWordcloud from 'react-wordcloud'
 const ModalForDetailView = ({ diary, diaryModal, setDiaryViewModal, clickDiary }) => {
     const page = diary[clickDiary === -1 ? 0 : clickDiary]
     // const title =diary[clickDiary === -1 ? 0 : clickDiary].title
-
+    const words = [
+        {
+          text: 'told',
+          value: 64,
+        },
+        {
+          text: 'mistake',
+          value: 11,
+        },
+        {
+          text: 'thought',
+          value: 16,
+        },
+        {
+          text: '고양이',
+          value: 200,
+        },
+        {
+            text: '강아지',
+            value: 100,
+          },
+          {
+            text: '안녕',
+            value: 90,
+          },
+          {
+            text: '졸작',
+            value: 18,
+          },
+          {
+            text: '초콜릿',
+            value: 20,
+          },
+          {
+            text: '약',
+            value: 3,
+          },
+        
+      ]
+      const colors = ['#eee7df', '#dbcbbe','#b0988e','#abdeed7','#4d8581']
     return (
         <>
             <Modal id="diaryModal" show={diaryModal} onHide={() => setDiaryViewModal(false)} size="lg" animation={true} aria-labelledby="contained-modal-title-vcenter" centered>
@@ -28,7 +68,7 @@ const ModalForDetailView = ({ diary, diaryModal, setDiaryViewModal, clickDiary }
                         <font className="infoTxt">속마음 분석</font><br />
                         <font className="infoTxt">워드클라우드</font><br />
 
-                        <img className="word_cloud" src={page.wordCloud} />
+                        <ReactWordcloud words={words} color={colors} />
                     </div>
                 </Modal.Body>
                 <Modal.Footer>

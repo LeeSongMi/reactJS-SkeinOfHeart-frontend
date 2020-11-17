@@ -13,10 +13,11 @@
 /* content */
 #diaryWrite .content {
     width: 90%;
-    height: 90%;
+    height: auto;
     border: solid 2px white;
     display: flex;
     margin: auto;
+    padding-bottom: 5%;
 }
 
 /* content: top-section */
@@ -67,6 +68,7 @@
     font-family: MapoFlowerIsland;
     width: 40vw;
     height: 70vh;
+    max-height: 600px;
     resize: none;
     padding: 20px;
     overflow-y: auto;

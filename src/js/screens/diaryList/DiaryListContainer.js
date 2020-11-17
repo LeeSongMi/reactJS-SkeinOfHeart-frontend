@@ -80,6 +80,15 @@ const DiaryListContainer = () => {
             date: '2020-11-16',
             color: '#eee7df',
         },
+        {
+            title: '오늘의 일기5',
+            content: '오늘은 마음 실타래 일기를 써보자',
+            wordCloud: 'image/wordCloud3.png',
+            cover: 'image/yarn1.png',
+            date: '2020-11-16',
+            color: '#b0988e',
+        },
+        
     ]
 
     // Slick Setting
@@ -88,8 +97,7 @@ const DiaryListContainer = () => {
         focusOnSelect: true,
         infinite: true,
         speed: 1000,
-        
-        slidesToShow: 3,
+        slidesToShow: 5,
         slidesToScroll: 1,
         initialSlide: 1,
         autoplay: {autoSlide},
@@ -105,11 +113,11 @@ const DiaryListContainer = () => {
                 },
             },
             {
-                breakpoint: 600,
+                breakpoint: 1000,
                 settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2,
-                    initialSlide: 2,
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    // initialSlide: 2,
                 },
             },
             {
