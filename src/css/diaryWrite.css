@@ -9,6 +9,9 @@
 #diaryWrite {
     justify-content: center;
     display: flex;
+    height: auto !important;
+    margin: 5% 0px;
+
 }
 /* content */
 #diaryWrite .content {
