@@ -4,16 +4,15 @@ import ReactDOM from 'react-dom'
 import { getElementError } from '@testing-library/react'
 
 const DiaryListPresenter = ({ diary, clickDiary, changeDiary, diaryListSlickSetting, cloud, setCloud, diaryModal, setDiaryViewModal, modalHandler }) => {
+    const [isSelected, setSelect] = useState(false)
+
     console.table(diary[clickDiary === -1 ? 0 : clickDiary])
     return (
         <div id="diaryList" className="main-div" style={{ height: window.innerHeight }}>
             <div className="content">
                 <div className="title">다이어리 리스트</div>
 
-                {/* <img src={diary.diary[0].wordCloud} /> */}
-                {/* <div className={`wordCloud ${cloud}`}> */}
-                    {/* <img className="word_cloud" hidden={!cloud} src={diary[clickDiary === -1 ? 0 : clickDiary].wordCloud} /> */}
-                {/* </div> */}
+                <div className="book-content">{isSelected ? <div></div> : <p> 선택된 일기가 없어요 :)</p>}</div>
                 <SliderSlick {...diaryListSlickSetting}>
                     {diary.map((info, index) => (
                         <>

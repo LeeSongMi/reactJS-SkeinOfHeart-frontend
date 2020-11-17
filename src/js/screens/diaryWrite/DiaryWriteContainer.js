@@ -16,6 +16,7 @@ const DiaryWriteContainer = () => {
             method: 'POST',
             url: 'http://127.0.0.1:8000/ai/wordcloud/',
             data: qs.stringify({
+                user_no: 1,
                 content: content,
             }),
             headers: {
