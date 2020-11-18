@@ -24,7 +24,16 @@ const DiaryListPresenter = ({ isSelected, clickDiary, changeDiary, diaryListSlic
         { text: '초콜릿', value: 20 },
         { text: '약', value: 3 },
     ]
-    const colors = ['#eee7df', '#dbcbbe', '#b0988e', '#abdeed7', '#4d8581']
+    const colorPalette = {
+        기쁨: "#f7c9c9",
+        신뢰: "#78c752",
+        기대: "#97dddd",
+        슬픔: "#91a8d1",
+        혐오: "#000000",
+        공포: "#034f83",
+        분노: "#dd4132",
+        놀라움: "#f9e03d",
+    }
 
     // -- useEffect
     useEffect(() => {
@@ -83,7 +92,7 @@ const DiaryListPresenter = ({ isSelected, clickDiary, changeDiary, diaryListSlic
                                               changeDiary(e)
                                               setPage(info)
                                           }}>
-                                          {/* <img src={info.cover} width="80vw" height="auto"></img> */}
+                                          <div className="color-box" style={{backgroundColor:colorPalette[info.emotion_state],color:'white'}}>{info.emotion_state}</div>
                                           <font className="bookContent">{info.content}</font>
                                       </div>
                                   </div>
