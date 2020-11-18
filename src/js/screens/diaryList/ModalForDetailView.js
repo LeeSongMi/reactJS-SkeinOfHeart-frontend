@@ -6,9 +6,8 @@ import '../../../css/detailViewModal.css'
 import { faHeartbeat } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import ReactWordcloud from 'react-wordcloud'
-const ModalForDetailView = ({ diary, diaryModal, setDiaryViewModal, clickDiary }) => {
+const ModalForDetailView = ({ diary, diaryModal, setDiaryViewModal, clickDiary, colorPalette }) => {
     const page = diary[clickDiary === -1 ? 0 : clickDiary]
-    // const title =diary[clickDiary === -1 ? 0 : clickDiary].title
     const words = [
         {
             text: 'told',
@@ -54,7 +53,7 @@ const ModalForDetailView = ({ diary, diaryModal, setDiaryViewModal, clickDiary }
                 <Modal.Header>
                     <Modal.Title id="contained-modal-title-vcenter">
                         {/* <div className="viewTitle">{page.title}</div> */}
-                        <div className="viewDate">작성일: {page.date}</div>
+                        <div className="viewDate">작성일: {page.datetime}</div>
                     </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
@@ -77,7 +76,7 @@ const ModalForDetailView = ({ diary, diaryModal, setDiaryViewModal, clickDiary }
                     {/* <Button variant="primary" className="moreBtn" onClick={() => MainBtnEventHandler(5)}>
                         작품 더보기
                     </Button> */}
-                    <FontAwesomeIcon icon={faHeartbeat} className="mindHeart" color={page.color} />
+                    <FontAwesomeIcon icon={faHeartbeat} className="mindHeart" color={colorPalette[page.emotion_state]} />
                     <Button variant="secondary" className="closeBtn" onClick={() => setDiaryViewModal(false)}>
                         닫기
                     </Button>

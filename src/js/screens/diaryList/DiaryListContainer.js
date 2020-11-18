@@ -18,37 +18,16 @@ const DiaryListContainer = () => {
 
     const [isSelected, setSelect] = useState(-1)
 
-    const history = useHistory()
-
-    const getDiaryList = () => {
-        // axios({
-        //   method: 'post',
-        // url: `${process.env.REACT_APP_API_HOST}/api/getDiaryList`,
-        //   data:{
-        //     content:content.value
-        //   },
-        //   headers: {
-        //     Authorization: `bearer ${localStorage.getItem('token')}`,
-        // },
-        // }).then((response)=>{
-        //   const data = response.data
-        // reset()
-        // })
+    const colorPalette = {
+        기쁨: '#f7c9c9',
+        신뢰: '#78c752',
+        기대: '#97dddd',
+        슬픔: '#91a8d1',
+        혐오: '#000000',
+        공포: '#034f83',
+        분노: '#dd4132',
+        놀라움: '#f9e03d',
     }
-
-    useEffect(() => {
-        /* 뒤로 가기 시 모달 닫기 */
-        // if (diaryModal) {
-        //     // history.push('/')
-        //     history.replace('/')
-        //     window.addEventListener('popstate', setDiaryViewModal(false))
-        // }
-        // if (!diaryModal) {
-        //     return () => {
-        //         // window.removeEventListener('popstate', setDiaryViewModal(false))
-        //     }
-        // }
-    }, [diaryModal])
 
     // Slick Setting
     const diaryListSlickSetting = {
@@ -129,7 +108,43 @@ const DiaryListContainer = () => {
             }
         }
     }
-
+    // const diary = [
+    //     {
+    //         content: '오늘은 마음 실타래 일기를 써보자1',
+    //         wordCloud: 'image/wordCloud3.png',
+    //         cover: 'image/yarn1.png',
+    //         datetime: '2020-11-16',
+    //         emotion_state: '신뢰',
+    //     },
+    //     {
+    //         content: '고양이가 최고양2',
+    //         wordCloud: 'image/wordCloud3.png',
+    //         cover: 'image/yarn1.png',
+    //         datetime: '2020-11-15',
+    //         emotion_state: '슬픔',
+    //     },
+    //     {
+    //         content: '오늘은 마음 실타래 일기를 써보자3',
+    //         wordCloud: 'image/wordCloud3.png',
+    //         cover: 'image/yarn1.png',
+    //         datetime: '2020-11-23',
+    //         emotion_state: '분노',
+    //     },
+    //     {
+    //         content: '고양이가 최고양4',
+    //         wordCloud: 'image/wordCloud3.png',
+    //         cover: 'image/yarn1.png',
+    //         datetime: '2020-11-20',
+    //         emotion_state: '기쁨',
+    //     },
+    //     {
+    //         content: '오늘은 마음 실타래 일기를 써보자5',
+    //         wordCloud: 'image/wordCloud3.png',
+    //         cover: 'image/yarn1.png',
+    //         datetime: '2020-11-06',
+    //         emotion_state: '혐오',
+    //     },
+    // ]
     return (
         <>
             <DiaryListPresenter
@@ -143,9 +158,11 @@ const DiaryListContainer = () => {
                 modalHandler={modalHandler}
                 isSelected={isSelected}
                 setSelect={setSelect}
+                // diary={diary}
+                colorPalette={colorPalette}
             />
             <ToastContainer />
-            {/* <ModalForDetailView diaryModal={diaryModal} setDiaryViewModal={setDiaryViewModal} clickDiary={clickDiary} /> */}
+            {/* <ModalForDetailView diary={diary} diaryModal={diaryModal} setDiaryViewModal={setDiaryViewModal} clickDiary={clickDiary} colorPalette={colorPalette} /> */}
         </>
     )
 }

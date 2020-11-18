@@ -7,7 +7,7 @@ import axios from 'axios'
 import qs from 'qs'
 import { render } from '@testing-library/react'
 
-const DiaryListPresenter = ({ isSelected, setSelect, clickDiary, changeDiary, diaryListSlickSetting, cloud, setCloud, diaryModal, setDiaryViewModal, modalHandler }) => {
+const DiaryListPresenter = ({ isSelected, setSelect, clickDiary, changeDiary, diaryListSlickSetting, cloud, setCloud, diaryModal, setDiaryViewModal, modalHandler, colorPalette }) => {
     // -- useState & variable
     const [bookList, setBookList] = useState(null)
     const [page, setPage] = useState(null)
@@ -25,18 +25,8 @@ const DiaryListPresenter = ({ isSelected, setSelect, clickDiary, changeDiary, di
         { text: '초콜릿', value: 20 },
         { text: '약', value: 3 },
     ]
-    const colorPalette = {
-        기쁨: "#f7c9c9",
-        신뢰: "#78c752",
-        기대: "#97dddd",
-        슬픔: "#91a8d1",
-        혐오: "#000000",
-        공포: "#034f83",
-        분노: "#dd4132",
-        놀라움: "#f9e03d",
-    }
 
-    // -- useEffect
+    // --useEffect
     useEffect(() => {
         console.log('hey')
         axios({
@@ -54,7 +44,9 @@ const DiaryListPresenter = ({ isSelected, setSelect, clickDiary, changeDiary, di
             console.log(data, 'test')
         })
     }, [])
-
+    // if (bookList === null) {
+    //     setBookList(diary)
+    // }
     // -- method
     const scrollToCalender = () => {
         window.scrollTo({ top: window.innerHeight * 3, left: 0, behavior: 'smooth' })
@@ -116,11 +108,16 @@ const DiaryListPresenter = ({ isSelected, setSelect, clickDiary, changeDiary, di
                                               changeDiary(e)
                                               setPage(info)
                                               clickSlideHandler(e.target.id)
+                                              setDiaryViewModal(true)
                                               console.log(e.target.id, 'eee')
                                           }}>
-                                          <div className="color-box" style={{backgroundColor:colorPalette[info.emotion_state],color:'white',marginBottom:'10px'}}>{info.emotion_state}</div>
+                                          <div className="color-box" style={{ backgroundColor: colorPalette[info.emotion_state], color: 'white', marginBottom: '10px' }}>
+                                              {info.emotion_state}
+                                          </div>
                                           <div className="bookContent">{info.content}</div>
-                                          <div className="datetime" style={{backgroundColor:'lightgray', color:'white', marginTop:'10px'}}>{info.datetime}</div>
+                                          <div className="datetime" style={{ backgroundColor: 'lightgray', color: 'white', marginTop: '10px' }}>
+                                              {info.datetime}
+                                          </div>
                                       </div>
                                   </div>
                               </>
