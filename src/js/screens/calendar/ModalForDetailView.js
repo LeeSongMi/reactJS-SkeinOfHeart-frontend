@@ -16,8 +16,6 @@ const ModalForDetailView = ({ diaryModal, setDiaryViewModal, diary, clickDay, co
         }
     }
     findDiary(diary, clickDay)
-    console.log(page, 'ppp')
-    console.log(page.length === 0, 'TnF')
     const words = [
         {
             text: 'told',
