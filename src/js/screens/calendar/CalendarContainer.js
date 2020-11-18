@@ -11,20 +11,18 @@ const CalendarContainer = () => {
     const [diaryModal, setDiaryViewModal] = useState(false)
     const diary = [
         {
-            title: '오늘의 일기',
             content: '오늘은 마음 실타래 일기를 써보자',
             wordCloud: 'image/wordCloud3.png',
             cover: 'image/yarn1.png',
             date: '2020-11-16',
-            color: '#dbcbbe',
+            emotion: '신뢰',
         },
         {
-            title: '오늘의 일기',
             content: '오늘은 마음 실타래 일기를 써보자',
             wordCloud: 'image/wordCloud3.png',
             cover: 'image/yarn1.png',
-            date: '2020-11-19',
-            color: '#abded7',
+            date: '2020-11-23',
+            emotion: '놀라움',
         },
     ]
     const modalHandler = (e) => {
@@ -35,9 +33,19 @@ const CalendarContainer = () => {
             setDiaryViewModal(true)
         }
     }
+    const colorPalette = {
+        기쁨: '#f7c9c9',
+        신뢰: '#78c752',
+        기대: '#97dddd',
+        슬픔: '#91a8d1',
+        혐오: '#000000',
+        공포: '#034f83',
+        분노: '#dd4132',
+        놀라움: '#f9e03d',
+    }
     return (
         <>
-            <CalendarPresenter value={value} onChange={onChange} diary={diary} modalHandler={modalHandler} />
+            <CalendarPresenter value={value} onChange={onChange} diary={diary} modalHandler={modalHandler} colorPalette={colorPalette} />
             <ModalForDetailView diary={diary} diaryModal={diaryModal} setDiaryViewModal={setDiaryViewModal} clickDiary={clickDiary} />
         </>
     )
