@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'MapoFlowerIsland';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/MapoFlowerIslandA.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 #diaryList {
     justify-content: center;
     display: flex;
@@ -49,12 +56,37 @@
 }
 
 #diaryList .book-content {
-    font-style: MapoFlowerIsland;
-    background-color: white;
+    border: 2px solid white;
     width: 90%;
     height: 50%;
     margin: auto;
     text-align: center;
+    display: flex;
+}
+#diaryList .book-content > div{
+  font-family: MapoFlowerIsland;
+}
+#diaryList .left-section {
+  padding: 10px;
+  background-image: url('/image/pages/grid.jpg');
+  background-size: 550px;
+  width: 45%;
+  margin: 22px;
+  box-shadow: 5px 5px 5px #b0988e;
+  overflow-y: auto;
+  overflow-x: none;
+}
+#diaryList .right-section {
+  width: 50%;
+  height: 100%;
+}
+#diaryList .right-up-section {
+  background-color: orange;
+  height: 50%;
+}
+#diaryList .right-down-section {
+  background-color: darkcyan;
+  height: 50%;
 }
 
 #diaryList .book {
