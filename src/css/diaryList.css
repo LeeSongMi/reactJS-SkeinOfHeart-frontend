@@ -132,7 +132,6 @@
     margin-top: 0%;
     cursor: pointer;
     overflow-y: hidden;
-    background-image: ;
 }
 
 .slick-track {
@@ -162,7 +161,6 @@
 #diaryList .book .book_cover .bookContent {
     color: #b0988e;
 }
-
 
 #diaryList .btnDiv {
     display: flex;
