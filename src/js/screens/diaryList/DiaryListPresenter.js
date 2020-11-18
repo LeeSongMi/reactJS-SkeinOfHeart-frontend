@@ -118,7 +118,7 @@ const DiaryListPresenter = ({ isSelected, setSelect, clickDiary, changeDiary, di
                                               clickSlideHandler(e.target.id)
                                               console.log(e.target.id, 'eee')
                                           }}>
-                                          <div className="color-box" style={{backgroundColor:colorPalette[info.emotion_state],color:'white'}}>{info.emotion_state}</div>
+                                          <div className="color-box" style={{backgroundColor:colorPalette[info.emotion_state],color:'white',marginBottom:'10px'}}>{info.emotion_state}</div>
                                           <font className="bookContent">{info.content}</font>
                                       </div>
                                   </div>
