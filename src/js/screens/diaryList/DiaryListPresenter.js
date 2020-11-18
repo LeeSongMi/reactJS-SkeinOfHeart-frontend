@@ -63,7 +63,6 @@ const DiaryListPresenter = ({ diary, clickDiary, changeDiary, diaryListSlickSett
                                     <font className="contentTxt">{page.content}</font>
                                 </div>
                             </div>
-                            {/* <hr /> */}
                             <div className="diaryRight">
                                 <div className="mindArea">
                                     <font className="infoTxt">속마음 분석</font>
@@ -79,7 +78,7 @@ const DiaryListPresenter = ({ diary, clickDiary, changeDiary, diaryListSlickSett
                         <p className="showDiary"> 선택된 일기가 없어요 :)</p>
                     )}
                 </div>
-                <SliderSlick {...diaryListSlickSetting}>
+                <SliderSlick className="diarySlide" {...diaryListSlickSetting}>
                     {diary.map((info, index) => (
                         <>
                             {/* <div>
@@ -105,7 +104,7 @@ const DiaryListPresenter = ({ diary, clickDiary, changeDiary, diaryListSlickSett
                         </>
                     ))}
                 </SliderSlick>
-                <div className="btnDiv">
+                {/* <div className="btnDiv">
                     {diaryModal ? (
                         <button className="viewBtn" onClick={() => modalHandler()}>
                             일기장 닫기
@@ -115,7 +114,7 @@ const DiaryListPresenter = ({ diary, clickDiary, changeDiary, diaryListSlickSett
                             일기장 펼치기
                         </button>
                     )}
-                </div>
+                </div> */}
             </div>
         </div>
     )
