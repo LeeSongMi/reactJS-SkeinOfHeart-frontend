@@ -2,6 +2,7 @@ import { render } from '@testing-library/react'
 import React from 'react'
 import Calendar from 'react-calendar'
 import 'react-calendar/dist/Calendar.css'
+import Moment from 'moment'
 const CalendarPresenter = ({ value, onChange, diary, modalHandler, colorPalette }) => {
     return (
         <>
@@ -31,8 +32,9 @@ const CalendarPresenter = ({ value, onChange, diary, modalHandler, colorPalette 
                         <Calendar
                             onChange={onChange}
                             value={value}
-                            onClickDay={() => {
-                                modalHandler()
+                            onClickDay={(e) => {
+                                modalHandler(diary, Moment(e).format('YYYY-MM-DD'))
+                                // console.log(Moment(e).format('YYYY-MM-DD'))
                             }}
                             locale={'en-US'}
                             diary={diary}

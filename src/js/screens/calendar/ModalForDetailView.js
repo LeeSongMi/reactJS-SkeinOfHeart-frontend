@@ -6,9 +6,17 @@ import '../../../css/detailViewModal.css'
 import { faHeartbeat } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import ReactWordcloud from 'react-wordcloud'
-const ModalForDetailView = ({ diary, diaryModal, setDiaryViewModal, clickDiary }) => {
-    const page = diary[clickDiary === -1 ? 0 : clickDiary]
+const ModalForDetailView = ({ diaryModal, setDiaryViewModal, diary, clickDay }) => {
+    // const page = diary[clickDiary === -1 ? 0 : clickDiary]
     // const title =diary[clickDiary === -1 ? 0 : clickDiary].title
+    var page = []
+    const findDiary = (diary, date) => {
+        {
+            diary.map((info, index) => (info.date === date ? (page = info) : <></>))
+        }
+    }
+    console.log(page, 'ppp')
+    findDiary(diary, clickDay)
     const words = [
         {
             text: 'told',
@@ -53,7 +61,7 @@ const ModalForDetailView = ({ diary, diaryModal, setDiaryViewModal, clickDiary }
             <Modal id="diaryModal" show={diaryModal} onHide={() => setDiaryViewModal(false)} size="lg" animation={true} aria-labelledby="contained-modal-title-vcenter" centered>
                 <Modal.Header>
                     <Modal.Title id="contained-modal-title-vcenter">
-                        <div className="viewTitle">{page.title}</div>
+                        {/* <div className="viewTitle">{page.title}</div> */}
                         <div className="viewDate">작성일: {page.date}</div>
                     </Modal.Title>
                 </Modal.Header>

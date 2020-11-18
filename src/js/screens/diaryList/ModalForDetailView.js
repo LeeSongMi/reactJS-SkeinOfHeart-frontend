@@ -53,7 +53,7 @@ const ModalForDetailView = ({ diary, diaryModal, setDiaryViewModal, clickDiary }
             <Modal id="diaryModal" show={diaryModal} onHide={() => setDiaryViewModal(false)} size="lg" animation={true} aria-labelledby="contained-modal-title-vcenter" centered>
                 <Modal.Header>
                     <Modal.Title id="contained-modal-title-vcenter">
-                        <div className="viewTitle">{page.title}</div>
+                        {/* <div className="viewTitle">{page.title}</div> */}
                         <div className="viewDate">작성일: {page.date}</div>
                     </Modal.Title>
                 </Modal.Header>
