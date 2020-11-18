@@ -2,60 +2,58 @@
     /* max-height: 800px; */
     height: 80vh;
     width: 50vw;
-  }
-.modal-content .modal-header{
-  display: block;
 }
-.modal-content .modal-header .viewTitle{
-  width: 100%;
-  font-size: 20px;
-  color: #b0988e;
-  font-family: 'Gugi',cursive;
-  text-align: center;
+.modal-content .modal-header {
+    display: block;
 }
-.modal-content .modal-header .viewDate{
-  font-size: 15px;
-  color: #dbcbbe;
-  text-align: right;
+.modal-content .modal-header .viewTitle {
+    width: 100%;
+    font-size: 20px;
+    color: #b0988e;
+    font-family: 'Gugi', cursive;
+    text-align: center;
+}
+.modal-content .modal-header .viewDate {
+    font-size: 15px;
+    color: #dbcbbe;
+    text-align: right;
 }
 .modal-content .modal-body {
     padding-top: 10px;
     text-align: center;
     overflow-y: scroll;
     max-height: auto;
-  }
-.modal-content .modal-body .infoTxt{
-  font-size: 17px;
-  font-family: 'Gugi',cursive;
-  color: #b0988e;
-  /* padding:2%; */
-
 }
-.modal-content .modal-body .contentTxt{
-  font-size: 14px;
-  padding: 5%;
+.modal-content .modal-body .infoTxt {
+    font-size: 17px;
+    font-family: 'Gugi', cursive;
+    color: #b0988e;
+    /* padding:2%; */
 }
-.modal-content .modal-body .diaryArea{
-  min-height: 20vh;
+.modal-content .modal-body .contentTxt {
+    font-size: 14px;
+    padding: 5%;
 }
-.modal-content .modal-body .mindArea .word_cloud{
-  width: 70%;
-
+.modal-content .modal-body .diaryArea {
+    min-height: 20vh;
+}
+.modal-content .modal-body .mindArea .word_cloud {
+    width: 70%;
 }
 .modal-content .modal-footer {
-  display: block;
-  justify-content: unset;
+    display: block;
+    justify-content: unset;
 }
-.modal-content .modal-footer .mindHeart{
-  text-align: left;
-  font-size: 25px;
+.modal-content .modal-footer .mindHeart {
+    text-align: left;
+    font-size: 25px;
 }
-.modal-content .modal-footer .closeBtn{
-  border: none;
-  border-radius: 13px;
-  background-color: #b0988e;
-  /* font-weight: bold; */
-  color: white;
-  font-family: 'Gugi',cursive;
-  float: right;
+.modal-content .modal-footer .closeBtn {
+    border: none;
+    border-radius: 13px;
+    background-color: #b0988e;
+    /* font-weight: bold; */
+    color: white;
+    font-family: 'Gugi', cursive;
+    float: right;
 }

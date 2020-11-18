@@ -6,39 +6,53 @@ import '../../../css/calendar.css'
 const CalendarContainer = () => {
     const [value, onChange] = useState(new Date())
     // 클릭한 다이어리 값을 저장
-    const [clickDiary, setClickDiary] = useState(-1)
+    const [clickDay, setClickDay] = useState(-1)
     // 다이어리 디테일 뷰 모달 띄우는 변수
     const [diaryModal, setDiaryViewModal] = useState(false)
+
+    var page = []
+
     const diary = [
         {
-            title: '오늘의 일기',
             content: '오늘은 마음 실타래 일기를 써보자',
             wordCloud: 'image/wordCloud3.png',
             cover: 'image/yarn1.png',
             date: '2020-11-16',
-            color: '#dbcbbe',
+            emotion: '신뢰',
         },
         {
-            title: '오늘의 일기',
-            content: '오늘은 마음 실타래 일기를 써보자',
+            content: '고양이가 최고양',
             wordCloud: 'image/wordCloud3.png',
             cover: 'image/yarn1.png',
-            date: '2020-11-19',
-            color: '#abded7',
+            date: '2020-11-23',
+            emotion: '놀라움',
         },
     ]
-    const modalHandler = (e) => {
-        console.log(e)
+
+    const modalHandler = (diary, date) => {
         if (diaryModal) {
             setDiaryViewModal(false)
+            setClickDay(date)
         } else {
             setDiaryViewModal(true)
+            setClickDay(date)
         }
     }
+    const colorPalette = {
+        기쁨: '#f7c9c9',
+        신뢰: '#78c752',
+        기대: '#97dddd',
+        슬픔: '#91a8d1',
+        혐오: '#000000',
+        공포: '#034f83',
+        분노: '#dd4132',
+        놀라움: '#f9e03d',
+    }
+
     return (
         <>
-            <CalendarPresenter value={value} onChange={onChange} diary={diary} modalHandler={modalHandler} />
-            <ModalForDetailView diary={diary} diaryModal={diaryModal} setDiaryViewModal={setDiaryViewModal} clickDiary={clickDiary} />
+            <CalendarPresenter value={value} onChange={onChange} diary={diary} modalHandler={modalHandler} colorPalette={colorPalette} />
+            <ModalForDetailView diaryModal={diaryModal} setDiaryViewModal={setDiaryViewModal} diary={diary} clickDay={clickDay} />
         </>
     )
 }
