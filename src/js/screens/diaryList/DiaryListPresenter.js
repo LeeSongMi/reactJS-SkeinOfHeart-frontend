@@ -119,7 +119,8 @@ const DiaryListPresenter = ({ isSelected, setSelect, clickDiary, changeDiary, di
                                               console.log(e.target.id, 'eee')
                                           }}>
                                           <div className="color-box" style={{backgroundColor:colorPalette[info.emotion_state],color:'white',marginBottom:'10px'}}>{info.emotion_state}</div>
-                                          <font className="bookContent">{info.content}</font>
+                                          <div className="bookContent">{info.content}</div>
+                                          <div className="datetime" style={{backgroundColor:'lightgray', color:'white', marginTop:'10px'}}>{info.datetime}</div>
                                       </div>
                                   </div>
                               </>

@@ -161,6 +161,8 @@
 }
 #diaryList .book .book_cover .bookContent {
     color: #b0988e;
+    height: 240px;
+    overflow-y: hidden;
 }
 
 
