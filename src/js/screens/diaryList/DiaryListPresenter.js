@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import SliderSlick from 'react-slick'
 import ReactDOM from 'react-dom'
 import { getElementError } from '@testing-library/react'
+import ReactWordcloud from 'react-wordcloud'
 import axios from 'axios'
 import qs from 'qs'
 
@@ -26,25 +27,82 @@ const DiaryListPresenter = ({ diary, clickDiary, changeDiary, diaryListSlickSett
 
     const text = "안녕 반가워"
     console.table(diary[clickDiary === -1 ? 0 : clickDiary])
+
+const DiaryListPresenter = ({ diary, clickDiary, changeDiary, diaryListSlickSetting, isSelected, cloud, setCloud, diaryModal, setDiaryViewModal, modalHandler }) => {
+    const page = diary[clickDiary === -1 ? 0 : clickDiary]
+    const words = [
+        {
+          text: 'told',
+          value: 64,
+        },
+        {
+          text: 'mistake',
+          value: 11,
+        },
+        {
+          text: 'thought',
+          value: 16,
+        },
+        {
+          text: '고양이',
+          value: 200,
+        },
+        {
+            text: '강아지',
+            value: 100,
+          },
+          {
+            text: '안녕',
+            value: 90,
+          },
+          {
+            text: '졸작',
+            value: 18,
+          },
+          {
+            text: '초콜릿',
+            value: 20,
+          },
+          {
+            text: '약',
+            value: 3,
+          },
+        
+      ]
+      const colors = ['#eee7df', '#dbcbbe','#b0988e','#abdeed7','#4d8581']
     return (
         <div id="diaryList" className="main-div" style={{ height: window.innerHeight }}>
             <div className="content">
                 <div className="title">다이어리 리스트</div>
 
-                {isSelected ? (
-                    <div className="book-content">
-                        <div className="left-section"> {text}</div>
-                        <div className="right-section">
-                            <div className="right-up-section"></div>
-                            <div className="right-down-section"></div>
+                <div className="book-content">
+                    {isSelected ? (
+                        <div id="showDiary">
+                            <div className="diaryLeft">
+                                <div className="viewTitle">{page.title}</div>
+                                <div className="viewDate">작성일: {page.date}</div>
+                                <div className="diaryArea">
+                                    <font className="infoTxt">속마음</font>
+                                    <br />
+                                    <font className="contentTxt">{page.content}</font>
+                                </div>
+                            </div>
+                            <div className="diaryRight">
+                                <div className="mindArea">
+                                    <font className="infoTxt">속마음 분석</font>
+                                    <br />
+                                    <font className="infoTxt">워드클라우드</font>
+                                    <br />
+
+                                    <ReactWordcloud words={words} color={colors} className="wordC" />
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                ) : (
-                    <div className="book-content">
-                        <div> 선택된 일기가 없어요 :)</div>
-                    </div>
-                )}
-                <SliderSlick {...diaryListSlickSetting}>
+                    ) : (
+                        <p className="showDiary"> 선택된 일기가 없어요 :)</p>
+                    )}
+                </div>
+                <SliderSlick className="diarySlide" {...diaryListSlickSetting}>
                     {diary.map((info, index) => (
                         <>
                             {/* <div>
@@ -70,7 +128,7 @@ const DiaryListPresenter = ({ diary, clickDiary, changeDiary, diaryListSlickSett
                         </>
                     ))}
                 </SliderSlick>
-                <div className="btnDiv">
+                {/* <div className="btnDiv">
                     {diaryModal ? (
                         <button className="viewBtn" onClick={() => modalHandler()}>
                             일기장 닫기
@@ -80,7 +138,7 @@ const DiaryListPresenter = ({ diary, clickDiary, changeDiary, diaryListSlickSett
                             일기장 펼치기
                         </button>
                     )}
-                </div>
+                </div> */}
             </div>
         </div>
     )

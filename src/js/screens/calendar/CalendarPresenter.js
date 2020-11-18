@@ -2,13 +2,13 @@ import { render } from '@testing-library/react'
 import React from 'react'
 import Calendar from 'react-calendar'
 import 'react-calendar/dist/Calendar.css'
-const CalendarPresenter = ({ value, onChange, diary }) => {
+const CalendarPresenter = ({ value, onChange, diary, modalHandler }) => {
     return (
         <>
         {diary.map((info, index) => (
             render(
             <style jsx>{`
-                .react-calendar__month-view__days__day .mindHeart.a${info.date.replace(/\-/g,'')} { color: ${info.color}; }`}
+                .react-calendar__month-view__days__day .mindHeart.a${info.date.replace(/\-/g,'').substring(0,8)} { color: ${info.color}; }`}
             </style>
             ),<></>
         ))}
@@ -23,11 +23,14 @@ const CalendarPresenter = ({ value, onChange, diary }) => {
                     <Calendar
                         className={diary.color} 
                         onChange={onChange} value={value}
-                        onClickDay={()=>{console.log('하루를 클릭함')}} 
+                        onClickDay={()=>{modalHandler()}} 
                         locale={'en-US'}
                         diary={diary}
                         />
                 </div>  
+                {/* <button className="viewBtn" onClick={() => modalHandler()}>
+                            일기장 펼치기
+                        </button> */}
             </div>
         </div>
         </>

@@ -23,12 +23,14 @@
     "react-dom": "^16.14.0",
     "react-hook-form": "^6.11.0",
     "react-progressbar-semicircle": "^1.2.1",
+    "react-redux": "^7.2.2",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
     "react-slick": "^0.27.13",
     "react-toastify": "^6.1.0",
     "react-wordcloud": "^1.2.7",
     "reactstrap": "^8.7.1",
+    "redux": "^4.0.5",
     "styled-components": "^5.2.1"
   },
   "scripts": {

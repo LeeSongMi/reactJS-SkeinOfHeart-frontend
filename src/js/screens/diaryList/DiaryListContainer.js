@@ -16,6 +16,8 @@ const DiaryListContainer = () => {
     
     const [autoSlide,setAutoSlide] =useState(true)
 
+    const [isSelected, setSelect] = useState(false)
+
     const history = useHistory()
 
     const getDiaryList = () => {
@@ -61,7 +63,7 @@ const DiaryListContainer = () => {
             content: '고양이가 최고양',
             wordCloud: 'image/wordCloud3.png',
             cover: 'image/yarn1.png',
-            date: '2020-11-16',
+            date: '2020-11-15',
             color: '#dbcbbe',
         },
         {
@@ -77,7 +79,7 @@ const DiaryListContainer = () => {
             content: '고양이가 최고양',
             wordCloud: 'image/wordCloud3.png',
             cover: 'image/yarn1.png',
-            date: '2020-11-16',
+            date: '2020-11-18',
             color: '#eee7df',
         },
         {
@@ -133,6 +135,7 @@ const DiaryListContainer = () => {
     // 다이어리 클릭시 워드 클라우드를 보여주는 함수
     const changeDiary = (e) => {
         setClickDiary(e.currentTarget.id)
+        // setSelect(true)
         const no = e.currentTarget.id
         const target = document.getElementsByClassName(`word_cloud ${no}`).item(1)
         const beforeTar = document.getElementsByClassName(`word_cloud ${clickDiary}`).item(1)
@@ -140,9 +143,11 @@ const DiaryListContainer = () => {
         //클릭한 다이어리 다시 클릭시 워드 클라우드 숨김 처리
         if (clickDiary === e.currentTarget.id) {
             setCloud(false)
+            setSelect(false)
             setClickDiary(-1)
         } else {
-            setCloud(true)
+        setSelect(true)
+        setCloud(true)
         }
     }
     // const {addToast} = useToasts()
@@ -181,6 +186,7 @@ const DiaryListContainer = () => {
                 diaryModal={diaryModal}
                 setDiaryViewModal={setDiaryViewModal}
                 modalHandler={modalHandler}
+                isSelected={isSelected}
             />
             <ToastContainer />
             <ModalForDetailView diary={diary} diaryModal={diaryModal} setDiaryViewModal={setDiaryViewModal} clickDiary={clickDiary} />

@@ -8,6 +8,8 @@
 #diaryList {
     justify-content: center;
     display: flex;
+    height: auto !important;
+    margin: 5% 0px;
 }
 
 /* title */
@@ -88,19 +90,51 @@
   background-color: darkcyan;
   height: 50%;
 }
+#diaryList .book-content .showDiary{
+  height: 50vh;
+  padding: 3%;
+}
+#diaryList .book-content #showDiary{
+  height: 50vh;
+  /* padding: 3%; */
+  display: flex;
+  justify-content: center;
+}
+#diaryList .book-content #showDiary .diaryLeft{
+  width: 48%;
+  min-height: 45vh;
+  height: auto;
+  justify-self: left;
+  position:relative;
+  padding:10px;
+  text-align: center;
+  float: left;
+  border-right:1px #dbcbbe solid;
+  margin: 10px;
+}
+#diaryList .book-content #showDiary .diaryRight{
+  width: 48%;padding:10px;
+  min-height: 45vh;
+  height: auto;
+  
+  margin: 10px;
+  /* float: right; */
+}
 
 #diaryList .book {
     display: flex;
     justify-content: center;
-    width: 30vw;
+   width: 18vw;
     height: 350px;
-    /* margin: 25px 25px; */
+    margin: 25px 25px;
     margin-bottom: 30px;
     margin-top: 20px;
+    
 }
 #diaryList .book .book_cover {
     height: 350px;
-    width: 30vw;
+    width: 18vw;
+  /* min-width: 170px; */
     margin: 25px 25px;
     padding: 25px 25px;
     text-align: center;
@@ -109,7 +143,8 @@
     border-radius: 25px;
     box-shadow: 5px 5px 5px #b0988e;
     margin-top: 0%;
-}
+    cursor: pointer;
+  }
 .slick-track{
   width:60% !important;
   display: inline-flex;
@@ -141,6 +176,7 @@
 }
 #diaryList .book .book_cover .bookContent {
     color: #b0988e;
+
 }
 #diaryList .btnDiv {
     display: flex;
@@ -166,4 +202,35 @@
     text-align: center;
     overflow-y: scroll;
     max-height: auto;
+}
+.viewTitle{
+  font-size: 20px;
+  color: #b0988e;
+  font-family: 'Gugi',cursive;
+  text-align: center;
+}
+#showDiary .viewTitle{
+  font-size: 20px;
+  color: #b0988e;
+  font-family: 'Gugi',cursive;
+  text-align: center;
+}
+#showDiary .infoTxt{
+  font-size: 17px;
+  font-family: 'Gugi',cursive;
+  color: #b0988e;
+  /* padding:2%; */
+
+}
+#showDiary .contentTxt{
+  font-size: 14px;
+  padding: 5%;
+}
+#showDiary .diaryArea{
+  /* min-height: 20vh; */
+}
+#showDiary .viewDate{
+  font-size: 15px;
+  color: #dbcbbe;
+  text-align: right;
 }
