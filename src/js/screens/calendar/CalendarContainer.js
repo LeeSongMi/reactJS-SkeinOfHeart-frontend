@@ -52,7 +52,7 @@ const CalendarContainer = () => {
     return (
         <>
             <CalendarPresenter value={value} onChange={onChange} diary={diary} modalHandler={modalHandler} colorPalette={colorPalette} />
-            <ModalForDetailView diaryModal={diaryModal} setDiaryViewModal={setDiaryViewModal} diary={diary} clickDay={clickDay} />
+            <ModalForDetailView diaryModal={diaryModal} setDiaryViewModal={setDiaryViewModal} diary={diary} clickDay={clickDay} colorPalette={colorPalette} />
         </>
     )
 }

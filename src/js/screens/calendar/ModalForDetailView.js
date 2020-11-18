@@ -6,7 +6,7 @@ import '../../../css/detailViewModal.css'
 import { faHeartbeat } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import ReactWordcloud from 'react-wordcloud'
-const ModalForDetailView = ({ diaryModal, setDiaryViewModal, diary, clickDay }) => {
+const ModalForDetailView = ({ diaryModal, setDiaryViewModal, diary, clickDay, colorPalette }) => {
     // const page = diary[clickDiary === -1 ? 0 : clickDiary]
     // const title =diary[clickDiary === -1 ? 0 : clickDiary].title
     var page = []
@@ -15,8 +15,9 @@ const ModalForDetailView = ({ diaryModal, setDiaryViewModal, diary, clickDay }) 
             diary.map((info, index) => (info.date === date ? (page = info) : <></>))
         }
     }
-    console.log(page, 'ppp')
     findDiary(diary, clickDay)
+    console.log(page, 'ppp')
+    console.log(page.length === 0, 'TnF')
     const words = [
         {
             text: 'told',
@@ -58,39 +59,54 @@ const ModalForDetailView = ({ diaryModal, setDiaryViewModal, diary, clickDay }) 
     const colors = ['#eee7df', '#dbcbbe', '#b0988e', '#abdeed7', '#4d8581']
     return (
         <>
-            <Modal id="diaryModal" show={diaryModal} onHide={() => setDiaryViewModal(false)} size="lg" animation={true} aria-labelledby="contained-modal-title-vcenter" centered>
-                <Modal.Header>
-                    <Modal.Title id="contained-modal-title-vcenter">
-                        {/* <div className="viewTitle">{page.title}</div> */}
-                        <div className="viewDate">작성일: {page.date}</div>
-                    </Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                    <div className="diaryArea">
-                        <font className="infoTxt">속마음</font>
-                        <br />
-                        <font className="contentTxt">{page.content}</font>
-                    </div>
-                    <hr />
-                    <div className="mindArea">
-                        <font className="infoTxt">속마음 분석</font>
-                        <br />
-                        <font className="infoTxt">워드클라우드</font>
-                        <br />
+            {!(page.length === 0) ? (
+                <Modal id="diaryModal" show={diaryModal} onHide={() => setDiaryViewModal(false)} size="lg" animation={true} aria-labelledby="contained-modal-title-vcenter" centered>
+                    <Modal.Header>
+                        <Modal.Title id="contained-modal-title-vcenter">
+                            {/* <div className="viewTitle">{page.title}</div> */}
+                            <div className="viewDate">작성일: {page.date}</div>
+                        </Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                        <div className="diaryArea">
+                            <font className="infoTxt">속마음</font>
+                            <br />
+                            <font className="contentTxt">{page.content}</font>
+                        </div>
+                        <hr />
+                        <div className="mindArea">
+                            <font className="infoTxt">속마음 분석</font>
+                            <br />
+                            <font className="infoTxt">워드클라우드</font>
+                            <br />
 
-                        <ReactWordcloud words={words} color={colors} />
-                    </div>
-                </Modal.Body>
-                <Modal.Footer>
-                    {/* <Button variant="primary" className="moreBtn" onClick={() => MainBtnEventHandler(5)}>
+                            <ReactWordcloud words={words} color={colors} />
+                        </div>
+                    </Modal.Body>
+                    <Modal.Footer>
+                        {/* <Button variant="primary" className="moreBtn" onClick={() => MainBtnEventHandler(5)}>
                         작품 더보기
                     </Button> */}
-                    <FontAwesomeIcon icon={faHeartbeat} className="mindHeart" color={page.color} />
-                    <Button variant="secondary" className="closeBtn" onClick={() => setDiaryViewModal(false)}>
-                        닫기
-                    </Button>
-                </Modal.Footer>
-            </Modal>
+                        <FontAwesomeIcon icon={faHeartbeat} className="mindHeart" color={colorPalette[page.emotion]} />
+                        <Button variant="secondary" className="closeBtn" onClick={() => setDiaryViewModal(false)}>
+                            닫기
+                        </Button>
+                    </Modal.Footer>
+                </Modal>
+            ) : (
+                <>
+                    <Modal id="diaryModal" show={diaryModal} onHide={() => setDiaryViewModal(false)} size="lg" animation={true} aria-labelledby="contained-modal-title-vcenter" centered>
+                        <Modal.Body>
+                            <font className="nanDiary"> 작성된 일기가 없습니다.</font>
+                        </Modal.Body>
+                        <Modal.Footer>
+                            <Button variant="secondary" className="closeBtn" onClick={() => setDiaryViewModal(false)}>
+                                닫기
+                            </Button>
+                        </Modal.Footer>
+                    </Modal>
+                </>
+            )}
         </>
     )
 }

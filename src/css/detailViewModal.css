@@ -57,3 +57,10 @@
     font-family: 'Gugi', cursive;
     float: right;
 }
+.modal-content .modal-body .nanDiary {
+    font-size: 25px;
+    font-family: 'Gugi', cursive;
+    color: #b0988e;
+    margin-top: 50%;
+    display: block;
+}
