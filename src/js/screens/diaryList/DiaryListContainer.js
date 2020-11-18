@@ -13,10 +13,10 @@ const DiaryListContainer = () => {
     const [diaryModal, setDiaryViewModal] = useState(false)
     //워드 클라우드 숨기기 or 보이기 상태
     const [cloud, setCloud] = useState(false)
-    
-    const [autoSlide,setAutoSlide] =useState(true)
 
-    const [isSelected, setSelect] = useState(false)
+    const [autoSlide, setAutoSlide] = useState(true)
+
+    const [isSelected, setSelect] = useState(-1)
 
     const history = useHistory()
 
@@ -49,7 +49,6 @@ const DiaryListContainer = () => {
         //     }
         // }
     }, [diaryModal])
-    
 
     // Slick Setting
     const diaryListSlickSetting = {
@@ -60,7 +59,7 @@ const DiaryListContainer = () => {
         slidesToShow: 5,
         slidesToScroll: 1,
         initialSlide: 1,
-        autoplay: {autoSlide},
+        autoplay: { autoSlide },
         centerMode: true,
         arrows: false,
         responsive: [
@@ -104,8 +103,8 @@ const DiaryListContainer = () => {
             setSelect(false)
             setClickDiary(-1)
         } else {
-        setSelect(true)
-        setCloud(true)
+            setSelect(true)
+            setCloud(true)
         }
     }
     // const {addToast} = useToasts()
@@ -127,7 +126,6 @@ const DiaryListContainer = () => {
             } else {
                 setDiaryViewModal(true)
                 setAutoSlide(false)
-
             }
         }
     }
@@ -144,6 +142,7 @@ const DiaryListContainer = () => {
                 setDiaryViewModal={setDiaryViewModal}
                 modalHandler={modalHandler}
                 isSelected={isSelected}
+                setSelect={setSelect}
             />
             <ToastContainer />
             {/* <ModalForDetailView diaryModal={diaryModal} setDiaryViewModal={setDiaryViewModal} clickDiary={clickDiary} /> */}

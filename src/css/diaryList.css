@@ -134,6 +134,7 @@
     overflow-y: hidden;
     background-image: ;
 }
+
 .slick-track {
     width: 60% !important;
     display: inline-flex;
@@ -149,10 +150,7 @@
     overflow-x: hidden;
     overflow-y: hidden;
 }
-#diaryList .slick-list .slick-track .slick-slide.slick-active.slick-center .book_cover {
-    border: #abded7 2px solid;
-    box-shadow: 5px 5px 5px #abded7;
-}
+
 /* .word_cloud{
   visibility: hidden;
 } */
