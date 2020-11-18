@@ -1,15 +1,13 @@
 @font-face {
-  font-family: 'MapoFlowerIsland';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/MapoFlowerIslandA.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
+    font-family: 'MapoFlowerIsland';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/MapoFlowerIslandA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
 #diaryList {
     justify-content: center;
     display: flex;
-    height: auto !important;
-    margin: 5% 0px;
 }
 
 /* title */
@@ -30,9 +28,9 @@
     border: solid 2px white;
     margin: auto;
 }
-#diaryList .content .title{
-  text-align: center;
-  margin-top:20px;
+#diaryList .content .title {
+    text-align: center;
+    margin-top: 20px;
 }
 
 #diaryList .wordCloud {
@@ -58,97 +56,86 @@
 }
 
 #diaryList .book-content {
-    border: 2px solid white;
-    width: 90%;
-    height: 50%;
+    width: 80%;
+    height: 30%;
     margin: auto;
     text-align: center;
+
     display: flex;
 }
-#diaryList .book-content > div{
-  font-family: MapoFlowerIsland;
+#diaryList .book-content > div {
+    font-family: MapoFlowerIsland;
 }
+
+#diaryList .book-content img.logo {
+    width: 310px;
+    height: 100%;
+    background-image: url('/image/illustration/diary.jpg');
+    background-size: 310px;
+    box-shadow: 5px 5px 5px #b0988e;
+}
+
+#diaryList .book-content .description {
+    border: 3px solid white;
+    margin-left: 30px;
+    width: 60%;
+    padding: 30px 0px;
+}
+#diaryList .book-content .description #button {
+    width: 300px;
+    height: 40px;
+}
+
 #diaryList .left-section {
-  padding: 10px;
-  background-image: url('/image/pages/grid.jpg');
-  background-size: 550px;
-  width: 45%;
-  margin: 22px;
-  box-shadow: 5px 5px 5px #b0988e;
-  overflow-y: auto;
-  overflow-x: none;
+    padding: 10px;
+    background-image: url('/image/pages/grid.jpg');
+    background-size: 550px;
+    width: 45%;
+    margin: 22px;
+    box-shadow: 5px 5px 5px #b0988e;
+    overflow-y: auto;
+    overflow-x: none;
 }
 #diaryList .right-section {
-  width: 50%;
-  height: 100%;
+    width: 50%;
+    height: 100%;
 }
 #diaryList .right-up-section {
-  background-color: orange;
-  height: 50%;
+    background-color: orange;
+    height: 50%;
 }
 #diaryList .right-down-section {
-  background-color: darkcyan;
-  height: 50%;
-}
-#diaryList .book-content .showDiary{
-  height: 50vh;
-  padding: 3%;
-}
-#diaryList .book-content #showDiary{
-  height: 50vh;
-  /* padding: 3%; */
-  display: flex;
-  justify-content: center;
-}
-#diaryList .book-content #showDiary .diaryLeft{
-  width: 48%;
-  min-height: 45vh;
-  height: auto;
-  justify-self: left;
-  position:relative;
-  padding:10px;
-  text-align: center;
-  float: left;
-  border-right:1px #dbcbbe solid;
-  margin: 10px;
-}
-#diaryList .book-content #showDiary .diaryRight{
-  width: 48%;padding:10px;
-  min-height: 45vh;
-  height: auto;
-  
-  margin: 10px;
-  /* float: right; */
+    background-color: darkcyan;
+    height: 50%;
 }
 
 #diaryList .book {
     display: flex;
     justify-content: center;
-   width: 18vw;
+    width: 18vw;
     height: 350px;
     margin: 25px 25px;
     margin-bottom: 30px;
     margin-top: 20px;
-    
 }
 #diaryList .book .book_cover {
     height: 350px;
     width: 18vw;
-  /* min-width: 170px; */
+    /* min-width: 170px; */
     margin: 25px 25px;
     padding: 25px 25px;
     text-align: center;
-    border: 2px solid #b0988e;
     background-color: white;
-    border-radius: 25px;
+    border-radius: 5px;
+    font-family: MapoFlowerIsland;
     box-shadow: 5px 5px 5px #b0988e;
     margin-top: 0%;
     cursor: pointer;
-  }
-.slick-track{
-  width:60% !important;
-  display: inline-flex;
-  
+    overflow-y: hidden;
+}
+.slick-track {
+    width: 60% !important;
+    display: inline-flex;
 }
 .slick-track {
     width: 80% !important;
@@ -161,10 +148,9 @@
     overflow-x: hidden;
     overflow-y: hidden;
 }
-#diaryList .slick-list .slick-track .slick-slide.slick-active.slick-center .book_cover{
-  border: #abded7 2px solid;
-  box-shadow: 5px 5px 5px #abded7;
-
+#diaryList .slick-list .slick-track .slick-slide.slick-active.slick-center .book_cover {
+    border: #abded7 2px solid;
+    box-shadow: 5px 5px 5px #abded7;
 }
 /* .word_cloud{
   visibility: hidden;
@@ -176,7 +162,6 @@
 }
 #diaryList .book .book_cover .bookContent {
     color: #b0988e;
-
 }
 #diaryList .btnDiv {
     display: flex;
@@ -203,34 +188,30 @@
     overflow-y: scroll;
     max-height: auto;
 }
-.viewTitle{
-  font-size: 20px;
-  color: #b0988e;
-  font-family: 'Gugi',cursive;
-  text-align: center;
+.viewTitle {
+    font-size: 20px;
+    color: #b0988e;
+    font-family: 'Gugi', cursive;
+    text-align: center;
 }
-#showDiary .viewTitle{
-  font-size: 20px;
-  color: #b0988e;
-  font-family: 'Gugi',cursive;
-  text-align: center;
+#showDiary .viewTitle {
+    font-size: 20px;
+    color: #b0988e;
+    font-family: 'Gugi', cursive;
+    text-align: center;
 }
-#showDiary .infoTxt{
-  font-size: 17px;
-  font-family: 'Gugi',cursive;
-  color: #b0988e;
-  /* padding:2%; */
-
+#showDiary .infoTxt {
+    font-size: 17px;
+    font-family: 'Gugi', cursive;
+    color: #b0988e;
+    /* padding:2%; */
 }
-#showDiary .contentTxt{
-  font-size: 14px;
-  padding: 5%;
+#showDiary .contentTxt {
+    font-size: 14px;
+    padding: 5%;
 }
-#showDiary .diaryArea{
-  /* min-height: 20vh; */
-}
-#showDiary .viewDate{
-  font-size: 15px;
-  color: #dbcbbe;
-  text-align: right;
+#showDiary .viewDate {
+    font-size: 15px;
+    color: #dbcbbe;
+    text-align: right;
 }

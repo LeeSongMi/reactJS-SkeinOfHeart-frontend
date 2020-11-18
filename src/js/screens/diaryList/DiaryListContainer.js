@@ -49,49 +49,7 @@ const DiaryListContainer = () => {
         //     }
         // }
     }, [diaryModal])
-    const diary = [
-        {
-            title: '오늘의 일기1',
-            content: '오늘은 마음 실타래 일기를 써보자',
-            wordCloud: 'image/wordCloud3.png',
-            cover: 'image/yarn1.png',
-            date: '2020-11-16',
-            color: '#abded7',
-        },
-        {
-            title: '집가고싶다2',
-            content: '고양이가 최고양',
-            wordCloud: 'image/wordCloud3.png',
-            cover: 'image/yarn1.png',
-            date: '2020-11-15',
-            color: '#dbcbbe',
-        },
-        {
-            title: '오늘의 일기3',
-            content: '오늘은 마음 실타래 일기를 써보자',
-            wordCloud: 'image/wordCloud3.png',
-            cover: 'image/yarn1.png',
-            date: '2020-11-16',
-            color: '#b0988e',
-        },
-        {
-            title: '집가고싶다4',
-            content: '고양이가 최고양',
-            wordCloud: 'image/wordCloud3.png',
-            cover: 'image/yarn1.png',
-            date: '2020-11-18',
-            color: '#eee7df',
-        },
-        {
-            title: '오늘의 일기5',
-            content: '오늘은 마음 실타래 일기를 써보자',
-            wordCloud: 'image/wordCloud3.png',
-            cover: 'image/yarn1.png',
-            date: '2020-11-16',
-            color: '#b0988e',
-        },
-        
-    ]
+    
 
     // Slick Setting
     const diaryListSlickSetting = {
@@ -177,7 +135,6 @@ const DiaryListContainer = () => {
     return (
         <>
             <DiaryListPresenter
-                diary={diary}
                 clickDiary={clickDiary}
                 changeDiary={changeDiary}
                 diaryListSlickSetting={diaryListSlickSetting}
@@ -189,7 +146,7 @@ const DiaryListContainer = () => {
                 isSelected={isSelected}
             />
             <ToastContainer />
-            <ModalForDetailView diary={diary} diaryModal={diaryModal} setDiaryViewModal={setDiaryViewModal} clickDiary={clickDiary} />
+            {/* <ModalForDetailView diaryModal={diaryModal} setDiaryViewModal={setDiaryViewModal} clickDiary={clickDiary} /> */}
         </>
     )
 }
