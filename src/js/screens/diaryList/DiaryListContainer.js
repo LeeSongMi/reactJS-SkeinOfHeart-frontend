@@ -162,7 +162,7 @@ const DiaryListContainer = () => {
                 colorPalette={colorPalette}
             />
             <ToastContainer />
-            {/* <ModalForDetailView diary={diary} diaryModal={diaryModal} setDiaryViewModal={setDiaryViewModal} clickDiary={clickDiary} colorPalette={colorPalette} /> */}
+            {/* <ModalForDetailView bookList={bookList} diaryModal={diaryModal} setDiaryViewModal={setDiaryViewModal} clickDiary={clickDiary} colorPalette={colorPalette} /> */}
         </>
     )
 }

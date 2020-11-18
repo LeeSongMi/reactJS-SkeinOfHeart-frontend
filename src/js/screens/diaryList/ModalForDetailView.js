@@ -6,8 +6,8 @@ import '../../../css/detailViewModal.css'
 import { faHeartbeat } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import ReactWordcloud from 'react-wordcloud'
-const ModalForDetailView = ({ diary, diaryModal, setDiaryViewModal, clickDiary, colorPalette }) => {
-    const page = diary[clickDiary === -1 ? 0 : clickDiary]
+const ModalForDetailView = ({ bookList, diaryModal, setDiaryViewModal, clickDiary, colorPalette }) => {
+    const page = bookList[clickDiary === -1 ? 0 : clickDiary]
     const words = [
         {
             text: 'told',
