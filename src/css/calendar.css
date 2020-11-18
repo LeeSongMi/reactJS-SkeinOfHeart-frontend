@@ -1,28 +1,38 @@
-.title{
-    text-align: center;
+/* #diaryList .content {
+    
+} */
+#calendar .content {
+    width: 90%;
+    height: auto;
+    border: solid 2px white;
+    margin: auto;
 }
-#calendar {
+#calendar .content .title {
+    text-align: center;
+    margin-top: 20px;
+    width: 100%;
+}
+
+#calendar .content .calendar-div {
     padding: 5% 10%;
     text-align: center;
     display: flex;
     justify-content: center;
-    height: auto !important;
     background-color: #dbcbbe;
 }
-
-#calendar .calendar.left {
+#calendar .content .calendar.left {
     display: flex;
     justify-content: center;
     width: 20vw;
     background-color: #b0988e;
 }
-#calendar .calendar.left .title{
+#calendar .content .calendar.left .title {
     font-size: 20px;
-    font-family: 'Gugi',cursive;
+    font-family: 'Gugi', cursive;
     color: white;
-    padding-top:20px;
+    padding-top: 20px;
 }
-#calendar .calendar.right {
+#calendar .content .calendar.right {
     width: 70%;
     box-sizing: revert;
 }
