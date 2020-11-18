@@ -28,14 +28,26 @@ const CalendarContainer = () => {
             emotion: '놀라움',
         },
     ]
-
+    const existDiary = (diary, date) => {
+        var x = 0
+        {
+            diary.map((info, index) => (info.date === date ? (x = 1) : <></>))
+        }
+        if (x === 1) {
+            return true
+        } else {
+            return false
+        }
+    }
     const modalHandler = (diary, date) => {
         if (diaryModal) {
             setDiaryViewModal(false)
             setClickDay(date)
         } else {
-            setDiaryViewModal(true)
-            setClickDay(date)
+            if (existDiary(diary, date)) {
+                setDiaryViewModal(true)
+                setClickDay(date)
+            }
         }
     }
     const colorPalette = {
