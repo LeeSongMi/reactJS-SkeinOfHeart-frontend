@@ -14,6 +14,7 @@ const CalendarPresenter = ({ value, onChange, diary, modalHandler, colorPalette 
                                 .react-calendar__month-view__days__day .mindHeart.a${info.date.replace(/\-/g, '').substring(0, 8)} {
                                     color: ${colorPalette[info.emotion]};
                                     opacity: 0.8;
+                                    cursor: pointer;
                                 }
                             `}
                         </style>
@@ -21,24 +22,26 @@ const CalendarPresenter = ({ value, onChange, diary, modalHandler, colorPalette 
                     (<></>)
                 )
             )}
-            <div style={{ height: window.innerHeight }}>
-                <h1 className="title">감정 캘린더</h1>
-                <div id="calendar">
-                    <div className="calendar left">
-                        <font className="title">감정 캘린더</font>
-                        {/* <img src="image/book2.png" /> */}
-                    </div>
-                    <div className="calendar right">
-                        <Calendar
-                            onChange={onChange}
-                            value={value}
-                            onClickDay={(e) => {
-                                modalHandler(diary, Moment(e).format('YYYY-MM-DD'))
-                                // console.log(Moment(e).format('YYYY-MM-DD'))
-                            }}
-                            locale={'en-US'}
-                            diary={diary}
-                        />
+            <div id="calendar" className="main-div" style={{ height: window.innerHeight }}>
+                <div className="content">
+                    <div className="title">감정 캘린더</div>
+                    <div className="calendar-div">
+                        <div className="calendar left">
+                            <font className="title">감정 캘린더</font>
+                            {/* <img src="image/book2.png" /> */}
+                        </div>
+                        <div className="calendar right">
+                            <Calendar
+                                onChange={onChange}
+                                value={value}
+                                onClickDay={(e) => {
+                                    modalHandler(diary, Moment(e).format('YYYY-MM-DD'))
+                                    // console.log(Moment(e).format('YYYY-MM-DD'))
+                                }}
+                                locale={'en-US'}
+                                diary={diary}
+                            />
+                        </div>
                     </div>
                     {/* <button className="viewBtn" onClick={() => modalHandler()}>
                             일기장 펼치기
