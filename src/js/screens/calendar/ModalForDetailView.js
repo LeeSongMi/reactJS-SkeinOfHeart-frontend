@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Button } from 'react-bootstrap'
 import Modal from 'react-bootstrap/Modal'
 import 'bootstrap/dist/css/bootstrap.css'
@@ -6,23 +6,50 @@ import '../../../css/detailViewModal.css'
 import { faHeartbeat } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import ReactWordcloud from 'react-wordcloud'
+import qs from 'qs'
+import axios from 'axios'
+
 const ModalForDetailView = ({ diaryModal, setDiaryViewModal, diary, clickDay, colorPalette }) => {
-    // const page = diary[clickDiary === -1 ? 0 : clickDiary]
-    // const title =diary[clickDiary === -1 ? 0 : clickDiary].title
+    
+    // -- states & variables
     var page = []
+
+    const [words, setWords] = useState([])
+    const colors = ['#eee7df', '#dbcbbe', '#b0988e', '#abdeed7', '#4d8581']
+    const options = {
+        rotations: 5,
+        rotationAngles: [-90, 0],
+        fontSizes: [15, 40]
+      };
+
+    // -- useEffects & funtions
+    useEffect(() => {
+        console.log('hey')
+        if (page == null) return
+        const content = page.content
+        console.log(content)
+        axios({
+            method: 'POST',
+            url: 'http://127.0.0.1:8000/ai/wordcloud/',
+            data: qs.stringify({
+                user_no: 1,
+                content: content,
+            }),
+            headers: {
+                'content-type': 'application/x-www-form-urlencoded',
+            },
+        }).then((response) => {
+            const data = response.data
+            setWords(data)
+        })
+    }, [diaryModal])
+
     const findDiary = (diary, date) => {
         {
-            diary.map((info, index) => (info.date === date ? (page = info) : <></>))
+            diary.map((info, index) => (info.datetime === date ? (page = info) : <></>))
         }
     }
     findDiary(diary, clickDay)
-    const words = [
-        {
-            text: 'told',
-            value: 64,
-        },
-        {
-            text: 'mistake',
             value: 11,
         },
         {
@@ -31,30 +58,7 @@ const ModalForDetailView = ({ diaryModal, setDiaryViewModal, diary, clickDay, co
         },
         {
             text: '고양이',
-            value: 200,
-        },
-        {
-            text: '강아지',
-            value: 100,
-        },
-        {
-            text: '안녕',
-            value: 90,
-        },
-        {
-            text: '졸작',
-            value: 18,
-        },
-        {
-            text: '초콜릿',
-            value: 20,
-        },
-        {
-            text: '약',
-            value: 3,
-        },
-    ]
-    const colors = ['#eee7df', '#dbcbbe', '#b0988e', '#abdeed7', '#4d8581']
+
     return (
         <>
             {!(page.length === 0) ? (
@@ -62,7 +66,7 @@ const ModalForDetailView = ({ diaryModal, setDiaryViewModal, diary, clickDay, co
                     <Modal.Header>
                         <Modal.Title id="contained-modal-title-vcenter">
                             {/* <div className="viewTitle">{page.title}</div> */}
-                            <div className="viewDate">작성일: {page.date}</div>
+                            <div className="viewDate">작성일: {page.datetime}</div>
                         </Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
@@ -71,21 +75,20 @@ const ModalForDetailView = ({ diaryModal, setDiaryViewModal, diary, clickDay, co
                             <br />
                             <font className="contentTxt">{page.content}</font>
                         </div>
-                        <hr />
                         <div className="mindArea">
-                            <font className="infoTxt">속마음 분석</font>
-                            <br />
-                            <font className="infoTxt">워드클라우드</font>
-                            <br />
-
-                            <ReactWordcloud words={words} color={colors} />
+                        <font className="infoTxt">속마음 분석: 워드 클라우드</font>
+                        <br />
+                        <div style={{ height: '300px', width: '100%' }}>
+                            <ReactWordcloud words={words} color={colors} options={options}/>
                         </div>
+                    </div>
+                        <hr />
                     </Modal.Body>
                     <Modal.Footer>
                         {/* <Button variant="primary" className="moreBtn" onClick={() => MainBtnEventHandler(5)}>
                         작품 더보기
                     </Button> */}
-                        <FontAwesomeIcon icon={faHeartbeat} className="mindHeart" color={colorPalette[page.emotion]} />
+                        <FontAwesomeIcon icon={faHeartbeat} className="mindHeart" color={colorPalette[page.emotion_state]} />
                         <Button variant="secondary" className="closeBtn" onClick={() => setDiaryViewModal(false)}>
                             닫기
                         </Button>

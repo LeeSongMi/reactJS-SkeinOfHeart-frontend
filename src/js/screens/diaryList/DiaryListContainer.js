@@ -5,7 +5,6 @@ import '../../../css/diaryList.css'
 import '../../../css/commonStyle.css'
 import 'react-toastify/dist/ReactToastify.css'
 import DiaryListPresenter from './DiaryListPresenter'
-import ModalForDetailView from './ModalForDetailView'
 import * as actions from '../../../store/actions'
 import { connect } from 'react-redux'
 
@@ -165,7 +164,6 @@ const DiaryListContainer = ({ setWriting }) => {
                 colorPalette={colorPalette}
             />
             <ToastContainer />
-            {/* <ModalForDetailView bookList={bookList} diaryModal={diaryModal} setDiaryViewModal={setDiaryViewModal} clickDiary={clickDiary} colorPalette={colorPalette} /> */}
         </>
     )
 }

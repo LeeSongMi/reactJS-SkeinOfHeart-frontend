@@ -62,7 +62,7 @@ const ModalForDetailView = ({ bookList, diaryModal, setDiaryModal, clickDiary, c
                         <font className="infoTxt">속마음 분석: 워드 클라우드</font>
                         <br />
                         <div style={{ height: '300px', width: '100%' }}>
-                            <ReactWordcloud words={words} color={colors} />
+                            <ReactWordcloud words={words} color={colors} options={options} />
                         </div>
                     </div>
                 </Modal.Body>

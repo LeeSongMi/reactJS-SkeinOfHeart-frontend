@@ -1,7 +1,9 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import CalendarPresenter from './CalendarPresenter'
 import ModalForDetailView from './ModalForDetailView'
 import '../../../css/calendar.css'
+import qs from 'qs'
+import axios from 'axios'
 
 const CalendarContainer = () => {
     const [value, onChange] = useState(new Date())
@@ -10,29 +12,32 @@ const CalendarContainer = () => {
     // 다이어리 디테일 뷰 모달 띄우는 변수
     const [diaryModal, setDiaryViewModal] = useState(false)
 
-    var page = []
+    
+    const [diary, setDiary] = useState([])
 
-    const diary = [
-        {
-            content: '오늘은 마음 실타래 일기를 써보자',
-            wordCloud: 'image/wordCloud3.png',
-            cover: 'image/yarn1.png',
-            date: '2020-11-16',
-            emotion: '신뢰',
-        },
-        {
-            content: '고양이가 최고양',
-            wordCloud: 'image/wordCloud3.png',
-            cover: 'image/yarn1.png',
-            date: '2020-11-23',
-            emotion: '놀라움',
-        },
-    ]
+    useEffect(() => {
+        axios({
+            method: 'POST',
+            url: 'http://127.0.0.1:8000/load_pages',
+            data: qs.stringify({
+                user_no: 1,
+            }),
+            headers: {
+                'content-type': 'application/x-www-form-urlencoded',
+            },
+        }).then((response) => {
+            const data = response.data
+            setDiary(data)
+            console.log(diary)
+        })
+    }, [])
+
     const existDiary = (diary, date) => {
         var x = 0
         {
-            diary.map((info, index) => (info.date === date ? (x = 1) : <></>))
+            diary.map((info, index) => (info.datetime === date ? (x = 1) : <></>))
         }
+        console.log(x)
         if (x === 1) {
             return true
         } else {

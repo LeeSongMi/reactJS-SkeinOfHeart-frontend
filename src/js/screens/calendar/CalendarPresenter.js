@@ -1,18 +1,20 @@
 import { render } from '@testing-library/react'
-import React from 'react'
+import React, { useEffect } from 'react'
 import Calendar from 'react-calendar'
 import 'react-calendar/dist/Calendar.css'
 import Moment from 'moment'
 const CalendarPresenter = ({ value, onChange, diary, modalHandler, colorPalette }) => {
+
     return (
         <>
-            {diary.map(
-                (info, index) => (
+        {console.log(diary)}
+            {diary.map((info, index) => (
                     render(
                         <style jsx>
+                            {console.log(info.datetime.replace(/\-/g, '').substring(0, 8), info.emotion_state)}
                             {`
-                                .react-calendar__month-view__days__day .mindHeart.a${info.date.replace(/\-/g, '').substring(0, 8)} {
-                                    color: ${colorPalette[info.emotion]};
+                                .react-calendar__month-view__days__day .mindHeart.a${info.datetime.replace(/\-/g, '').substring(0, 8)} {
+                                    color: ${colorPalette[info.emotion_state]};
                                     opacity: 0.8;
                                     cursor: pointer;
                                 }
@@ -36,7 +38,7 @@ const CalendarPresenter = ({ value, onChange, diary, modalHandler, colorPalette 
                                 value={value}
                                 onClickDay={(e) => {
                                     modalHandler(diary, Moment(e).format('YYYY-MM-DD'))
-                                    // console.log(Moment(e).format('YYYY-MM-DD'))
+                                
                                 }}
                                 locale={'en-US'}
                                 diary={diary}

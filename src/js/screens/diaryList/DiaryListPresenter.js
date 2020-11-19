@@ -32,9 +32,7 @@ const DiaryListPresenter = ({ isSelected, setSelect, clickDiary, changeDiary, di
             setBookList(data)
         })
     }, [])
-    // if (bookList === null) {
-    //     setBookList(diary)
-    // }
+    
     // -- method
     const scrollToCalender = () => {
         window.scrollTo({ top: window.innerHeight * 3, left: 0, behavior: 'smooth' })
