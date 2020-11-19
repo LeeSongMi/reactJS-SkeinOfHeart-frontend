@@ -1,6 +1,8 @@
-/* #diaryList .content {
-    
-} */
+#calendar {
+    justify-content: center;
+    display: flex;
+}
+
 #calendar .content {
     width: 90%;
     height: auto;

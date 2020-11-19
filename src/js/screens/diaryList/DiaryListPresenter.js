@@ -80,7 +80,6 @@ const DiaryListPresenter = ({ isSelected, setSelect, clickDiary, changeDiary, di
                         <br />
                         <b>일기를 클릭</b>해서 당신을 들여다 볼 수 있어요.
                         <br />
-                        <br />
                         혹은 캘린더 화면을 통해 <b>감정 패턴</b>을 살펴볼 수도 있어요.
                         <br />
                         감정 패턴을 살펴보고 싶다면,

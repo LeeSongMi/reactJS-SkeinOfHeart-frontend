@@ -13,11 +13,10 @@
 /* content */
 #diaryWrite .content {
     width: 90%;
-    height: auto;
+    height: 95%;
     border: solid 2px white;
     display: flex;
     margin: auto;
-    padding-bottom: 5%;
 }
 
 /* content: top-section */
