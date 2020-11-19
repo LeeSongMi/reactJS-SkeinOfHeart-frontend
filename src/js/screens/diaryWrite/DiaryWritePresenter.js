@@ -7,7 +7,7 @@ import qs from 'qs'
 import ReactDOM from 'react-dom'
 import ReactWordcloud from 'react-wordcloud'
 
-const DiaryWritePresenter = ({ handleSubmit, addDiary, register }) => {
+const DiaryWritePresenter = ({ handleSubmit, addDiary, register, correctContent }) => {
     return (
         <>
             <div id="diaryWrite" className="main-div" style={{ height: window.innerHeight }}>
@@ -32,7 +32,7 @@ const DiaryWritePresenter = ({ handleSubmit, addDiary, register }) => {
                             <textarea className="writeDiary" type="textarea" id="inContent" name="content" ref={register} placeholder="이 곳에 글을 작성해주세요 ;)"/>
                             <input className="writeSubmit" id="button" type="submit" value="작성한 글 등록하기" />
                         </form>
-                        <button className="correct" id="button">맞춤법 올바르게 하기 </button>
+                        <button className="correct" id="button" onClick={correctContent}>맞춤법 올바르게 하기 </button>
                     </div>
                 </div>
             </div>
