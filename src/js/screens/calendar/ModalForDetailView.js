@@ -50,14 +50,6 @@ const ModalForDetailView = ({ diaryModal, setDiaryViewModal, diary, clickDay, co
         }
     }
     findDiary(diary, clickDay)
-            value: 11,
-        },
-        {
-            text: 'thought',
-            value: 16,
-        },
-        {
-            text: '고양이',
 
     return (
         <>
