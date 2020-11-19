@@ -6,7 +6,10 @@ import '../../../css/commonStyle.css'
 import 'react-toastify/dist/ReactToastify.css'
 import DiaryListPresenter from './DiaryListPresenter'
 import ModalForDetailView from './ModalForDetailView'
-const DiaryListContainer = () => {
+import * as actions from '../../../store/actions'
+import { connect } from 'react-redux'
+
+const DiaryListContainer = ({ setWriting }) => {
     // 클릭한 다이어리 값을 저장
     const [clickDiary, setClickDiary] = useState(-1)
     // 다이어리 디테일 뷰 모달 띄우는 변수
@@ -17,7 +20,7 @@ const DiaryListContainer = () => {
     const [autoSlide, setAutoSlide] = useState(true)
 
     const [isSelected, setSelect] = useState(-1)
-
+    console.log(setWriting, 'setWrin')
     const colorPalette = {
         기쁨: '#f7c9c9',
         신뢰: '#78c752',
@@ -166,5 +169,10 @@ const DiaryListContainer = () => {
         </>
     )
 }
+const mapToDispatch = (dispatch) => ({
+    onCreate: (data) => dispatch(actions._create(data)),
+    onUpdate: (index) => dispatch(actions._update(index)),
+    setWriting: (state) => dispatch(actions._setwriting(state)),
+})
 
-export default DiaryListContainer
+export default connect(null, mapToDispatch)(DiaryListContainer)
