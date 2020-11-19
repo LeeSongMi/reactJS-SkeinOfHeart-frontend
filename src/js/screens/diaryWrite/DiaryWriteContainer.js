@@ -35,7 +35,7 @@ const DiaryWriteContainer = () => {
     }
 
     const correctContent = () => {
-        const content = document.getElementById("inContent").value
+        const content = document.getElementById('inContent').value
         axios({
             url: '',
             method: 'POST',
@@ -48,11 +48,12 @@ const DiaryWriteContainer = () => {
             },
         }).then((response) => {
             const data = response.data
-            document.getElementById("inContent").value = data
-            
+            document.getElementById('inContent').value = data
         })
     }
 
+    // -- component
+    
     return <DiaryWritePresenter correctContent={correctContent} register={register} reset={reset} handleSubmit={handleSubmit} page={page} setPage={setPage} addDiary={addDiary} />
 }
 

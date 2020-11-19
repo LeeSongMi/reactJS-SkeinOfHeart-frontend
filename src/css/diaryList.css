@@ -216,3 +216,9 @@
     color: #dbcbbe;
     text-align: right;
 }
+
+
+/* modal css */
+#diaryModal .contentTxt {
+    font-family: MapoFlowerIsland;
+}

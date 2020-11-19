@@ -4,31 +4,20 @@ import ReactDOM from 'react-dom'
 import { getElementError } from '@testing-library/react'
 import ReactWordcloud from 'react-wordcloud'
 import axios from 'axios'
+import ModalForDetailView from './ModalForDetailView'
 import qs from 'qs'
 import { render } from '@testing-library/react'
 
-const DiaryListPresenter = ({ isSelected, setSelect, clickDiary, changeDiary, diaryListSlickSetting, cloud, setCloud, diaryModal, setDiaryViewModal, modalHandler, colorPalette }) => {
+const DiaryListPresenter = ({ isSelected, setSelect, clickDiary, changeDiary, diaryListSlickSetting, cloud, setCloud, setDiaryViewModal, modalHandler, colorPalette }) => {
     // -- useState & variable
     const [bookList, setBookList] = useState(null)
     const [page, setPage] = useState(null)
+    const [diaryModal, setDiaryModal] = useState(false)
 
     const text = '안녕 반가워'
 
-    const words = [
-        { text: 'told', value: 64 },
-        { text: 'mistake', value: 11 },
-        { text: 'thought', value: 16 },
-        { text: '고양이', value: 200 },
-        { text: '강아지', value: 100 },
-        { text: '안녕', value: 90 },
-        { text: '졸작', value: 18 },
-        { text: '초콜릿', value: 20 },
-        { text: '약', value: 3 },
-    ]
-
     // --useEffect
     useEffect(() => {
-        console.log('hey')
         axios({
             method: 'POST',
             url: 'http://127.0.0.1:8000/load_pages',
@@ -41,7 +30,6 @@ const DiaryListPresenter = ({ isSelected, setSelect, clickDiary, changeDiary, di
         }).then((response) => {
             const data = response.data
             setBookList(data)
-            console.log(data, 'test')
         })
     }, [])
     // if (bookList === null) {
@@ -107,8 +95,8 @@ const DiaryListPresenter = ({ isSelected, setSelect, clickDiary, changeDiary, di
                                               changeDiary(e)
                                               setPage(info)
                                               clickSlideHandler(e.target.id)
-                                              setDiaryViewModal(true)
-                                              console.log(e.target.id, 'eee')
+                                              setDiaryModal(true)
+                                              setPage(info)
                                           }}>
                                           <div className="color-box" style={{ backgroundColor: colorPalette[info.emotion_state], color: 'white', marginBottom: '10px' }}>
                                               {info.emotion_state}
@@ -123,17 +111,7 @@ const DiaryListPresenter = ({ isSelected, setSelect, clickDiary, changeDiary, di
                           ))
                         : ''}
                 </SliderSlick>
-                {/* <div className="btnDiv">
-                    {diaryModal ? (
-                        <button className="viewBtn" onClick={() => modalHandler()}>
-                            일기장 닫기
-                        </button>
-                    ) : (
-                        <button className="viewBtn" onClick={() => modalHandler()}>
-                            일기장 펼치기
-                        </button>
-                    )}
-                </div> */}
+                <ModalForDetailView diaryModal={diaryModal} page={page} setDiaryModal={setDiaryModal} colorPalette={colorPalette} />
             </div>
         </div>
     )
